@@ -10,21 +10,28 @@ public class Prediccion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer edad;      // Añadimos este campo para guardar la edad
+    private Integer edad;
     private Double score;
-    private Integer resultado; 
+    private Integer resultado;
+    
+    // --- 1. COLOCA LOS NUEVOS CAMPOS AQUÍ (Debajo de los anteriores) ---
+    private Integer pais;      //
+    private Integer productos; //
+    
     private LocalDateTime fecha = LocalDateTime.now();
 
     public Prediccion() {}
 
     // Constructor actualizado
-    public Prediccion(Integer edad, Double score, Integer resultado) {
+    public Prediccion(Integer edad, Double score, Integer resultado, Integer pais, Integer productos) {
         this.edad = edad;
         this.score = score;
         this.resultado = resultado;
+        this.pais = pais;
+        this.productos = productos;
     }
 
-    // --- GETTERS Y SETTERS ---
+    // --- 2. COLOCA LOS GETTERS Y SETTERS AQUÍ ---
     public Long getId() { return id; }
 
     public Integer getEdad() { return edad; }
@@ -35,6 +42,13 @@ public class Prediccion {
 
     public Integer getResultado() { return resultado; }
     public void setResultado(Integer resultado) { this.resultado = resultado; }
+
+    // Métodos que VS Code marcaba como faltantes:
+    public void setPais(Integer pais) { this.pais = pais; }
+    public Integer getPais() { return pais; }
+
+    public void setProductos(Integer productos) { this.productos = productos; }
+    public Integer getProductos() { return productos; }
 
     public LocalDateTime getFecha() { return fecha; }
 }

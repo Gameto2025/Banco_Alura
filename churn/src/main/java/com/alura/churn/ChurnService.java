@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import jakarta.annotation.PostConstruct;
 import java.io.InputStream;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class ChurnService {
@@ -23,111 +24,51 @@ public class ChurnService {
     public void init() throws Exception {
         try {
             System.out.println("\n=== INICIANDO CARGA DEL MODELO PMML ===");
-            
-            // Buscar el archivo PMML
             InputStream is = getClass().getResourceAsStream("/modelo_churn_banco.pmml");
             if (is == null) {
-                System.err.println("ERROR: No se encontró modelo_churn_banco.pmml en classpath");
-                System.err.println("Asegúrate de que el archivo está en: src/main/resources/");
+                System.err.println("ERROR: No se encontró modelo_churn_banco.pmml");
                 return;
             }
-            
-            System.out.println("✓ Archivo PMML encontrado");
-            
-            // Cargar modelo
-            this.evaluator = new LoadingModelEvaluatorBuilder()
-                .load(is)
-                .build();
-            
+            this.evaluator = new LoadingModelEvaluatorBuilder().load(is).build();
             this.evaluator.verify();
-            System.out.println("✓ Modelo verificado correctamente");
-            
-            // Información del modelo (SOLO métodos que existen)
-            System.out.println("\n=== INFORMACIÓN DEL MODELO ===");
-            
-            // 1. Input Fields
-            System.out.println("1. VARIABLES DE ENTRADA:");
-            List<InputField> inputFields = evaluator.getInputFields();
-            if (inputFields.isEmpty()) {
-                System.out.println("   ¡NO HAY VARIABLES DE ENTRADA!");
-            } else {
-                int i = 1;
-                for (InputField field : inputFields) {
-                    System.out.println("   " + i + ". " + field.getName().getValue());
-                    i++;
-                }
-            }
-            
-            // 2. Target Fields
-            System.out.println("\n2. VARIABLE OBJETIVO:");
-            List<TargetField> targetFields = evaluator.getTargetFields();
-            if (targetFields.isEmpty()) {
-                System.out.println("   ¡NO HAY VARIABLE OBJETIVO!");
-            } else {
-                for (TargetField field : targetFields) {
-                    System.out.println("   - " + field.getName().getValue());
-                }
-            }
-            
-            // 3. Output Fields
-            System.out.println("\n3. VARIABLES DE SALIDA:");
-            List<OutputField> outputFields = evaluator.getOutputFields();
-            if (outputFields.isEmpty()) {
-                System.out.println("   No hay variables de salida definidas");
-            } else {
-                for (OutputField field : outputFields) {
-                    System.out.println("   - " + field.getName().getValue());
-                }
-            }
-            
             modeloCargado = true;
-            System.out.println("\n=== MODELO LISTO PARA USAR ===\n");
-            
+            System.out.println("=== MODELO LISTO PARA USAR ===\n");
         } catch (Exception e) {
-            System.err.println("❌ ERROR al cargar el modelo:");
             e.printStackTrace();
             modeloCargado = false;
         }
     }
 
     public Map<String, Object> predecir(Map<String, Object> datosCliente) {
-        System.out.println("\n" + "=".repeat(50));
-        System.out.println("NUEVA PREDICCIÓN SOLICITADA");
-        System.out.println("=".repeat(50));
-        
         if (!modeloCargado) {
-            System.err.println("ERROR: Modelo no cargado");
             Map<String, Object> error = new HashMap<>();
             error.put("error", "Modelo no disponible");
             return error;
         }
-        
-        try {
-            // 1. Mostrar datos recibidos
-            System.out.println("Datos recibidos: " + datosCliente);
 
-            // 2. Extraer datos
+        try {
+            // 1. Extraer datos base (Aseguramos que coincidan con los nombres del JSON enviado desde el form)
             int edad = obtenerEntero(datosCliente, "edad", 0);
-            int productos = obtenerEntero(datosCliente, "productos", 0);
+            int productos = obtenerEntero(datosCliente, "productos", 1); // Valor por defecto 1
             int activo = obtenerEntero(datosCliente, "activo", 1);
             int pais = obtenerEntero(datosCliente, "pais", 0);
-            
-            System.out.println("Edad: " + edad + ", Productos: " + productos + 
-                             ", Activo: " + activo + ", País: " + pais);
 
-            // 3. Calcular variables (IGUAL que en Python)
+            // 2. Calcular variables de entrada para el modelo IA
             double ageRisk = (edad >= 40 && edad <= 70) ? 1.0 : 0.0;
             double inactivo4070 = (edad >= 40 && edad <= 70 && activo == 0) ? 1.0 : 0.0;
             double productsRiskFlag = (productos >= 3) ? 1.0 : 0.0;
-            double countryRiskFlag = (pais == 1) ? 1.0 : 0.0; // Germany=1
+            double countryRiskFlag = (pais == 2) ? 1.0 : 0.0; // Alemania suele ser index 2 en modelos de Alura
 
-            System.out.println("Variables calculadas:");
-            System.out.println("  Age_Risk: " + ageRisk);
-            System.out.println("  Inactivo_40_70: " + inactivo4070);
-            System.out.println("  Products_Risk_Flag: " + productsRiskFlag);
-            System.out.println("  Country_Risk_Flag: " + countryRiskFlag);
+            // 3. --- LÓGICA DE EXPLICABILIDAD ---
+            List<String> factoresClave = new ArrayList<>();
+            if (inactivo4070 == 1.0) factoresClave.add("Inactividad en edad crítica");
+            if (productsRiskFlag == 1.0) factoresClave.add("Exceso de productos (>=3)");
+            if (pais == 2) factoresClave.add("Riesgo por región (Alemania)");
+            if (productos == 1) factoresClave.add("Baja vinculación (1 producto)");
+            
+            if (factoresClave.isEmpty()) factoresClave.add("Perfil estable");
 
-            // 4. Preparar inputs
+            // 4. Preparar inputs para PMML
             Map<String, Object> inputs = new LinkedHashMap<>();
             inputs.put("Age_Risk", ageRisk);
             inputs.put("NumOfProducts", (double) productos);
@@ -135,193 +76,89 @@ public class ChurnService {
             inputs.put("Products_Risk_Flag", productsRiskFlag);
             inputs.put("Country_Risk_Flag", countryRiskFlag);
 
-            // 5. Verificar que el modelo espera estas variables
-            System.out.println("Variables que espera el modelo:");
             Map<FieldName, FieldValue> arguments = new LinkedHashMap<>();
-            
             for (InputField inputField : evaluator.getInputFields()) {
                 FieldName fieldName = inputField.getName();
-                String fieldNameStr = fieldName.getValue();
-                
-                Object value = inputs.get(fieldNameStr);
-                if (value == null) {
-                    System.err.println("  ⚠️  Falta: " + fieldNameStr);
-                    value = 0.0;
-                } else {
-                    System.out.println("  ✓ " + fieldNameStr + ": " + value);
-                }
-                
-                FieldValue fieldValue = inputField.prepare(value);
-                arguments.put(fieldName, fieldValue);
+                Object value = inputs.getOrDefault(fieldName.getValue(), 0.0);
+                arguments.put(fieldName, inputField.prepare(value));
             }
 
-            // 6. Ejecutar modelo
-            System.out.println("Ejecutando modelo...");
+            // 5. Ejecutar modelo y extraer probabilidad
             Map<FieldName, ?> results = evaluator.evaluate(arguments);
-            
-            // 7. Mostrar resultados
-            System.out.println("Resultados completos:");
-            for (Map.Entry<FieldName, ?> entry : results.entrySet()) {
-                System.out.println("  " + entry.getKey().getValue() + ": " + entry.getValue());
-            }
+            double probabilidad = extraerProbabilidad(results);
 
-            // 8. Extraer probabilidad
-            double probabilidad = 0.0;
-            List<TargetField> targetFields = evaluator.getTargetFields();
-            
-            if (!targetFields.isEmpty()) {
-                FieldName targetName = targetFields.get(0).getName();
-                Object targetValue = results.get(targetName);
-                
-                System.out.println("Valor objetivo: " + targetValue);
-                
-                if (targetValue instanceof ProbabilityDistribution) {
-                    ProbabilityDistribution<?> pd = (ProbabilityDistribution<?>) targetValue;
-                    
-                    System.out.println("Categorías disponibles:");
-                    for (Object category : pd.getCategories()) {
-                        double prob = pd.getProbability(category);
-                        System.out.println("  " + category + " = " + prob);
-                    }
-                    
-                    // Buscar probabilidad de churn
-                    for (Object category : pd.getCategories()) {
-                        String catStr = category.toString();
-                        if (catStr.equals("1") || catStr.equals("True") || catStr.equals("Churn")) {
-                            probabilidad = pd.getProbability(category);
-                            System.out.println("Probabilidad encontrada en categoría: " + catStr);
-                            break;
-                        }
-                    }
-                    
-                    // Si no encontró, tomar la última
-                    if (probabilidad == 0.0 && !pd.getCategories().isEmpty()) {
-                        List<Object> categories = new ArrayList<>(pd.getCategories());
-                        Object ultimaCat = categories.get(categories.size() - 1);
-                        probabilidad = pd.getProbability(ultimaCat);
-                        System.out.println("Usando última categoría: " + ultimaCat);
-                    }
-                    
-                } else if (targetValue instanceof Number) {
-                    probabilidad = ((Number) targetValue).doubleValue();
-                }
-            }
+            // 6. Interpretar y GUARDAR (CORRECCIÓN: Guardar país y productos)
+            boolean abandona = probabilidad >= 0.58;
+            String nivelRiesgo = determinarNivelRiesgo(probabilidad);
 
-            System.out.println("Probabilidad final: " + (probabilidad * 100) + "%");
-
-            // 9. Interpretar resultado con mensajes específicos
-            double umbralOptimo = 0.58;
-            boolean abandona = probabilidad >= umbralOptimo;
-
-            String nivelRiesgo;
-            String mensajeDetallado;
-
-            if (probabilidad >= 0.75) {
-                nivelRiesgo = "ALTO";
-                mensajeDetallado = String.format(
-                    "🔴 RIESGO ALTO (%.1f%%) - El cliente probablemente abandonará. " +
-                    "Se recomienda contacto urgente y oferta de retención.",
-                    probabilidad * 100
-                );
-            } else if (probabilidad >= umbralOptimo) {
-                nivelRiesgo = "MEDIO";
-                mensajeDetallado = String.format(
-                    "🟡 RIESGO MEDIO (%.1f%%) - El cliente podría abandonar. " +
-                    "Se sugiere seguimiento en los próximos días.",
-                    probabilidad * 100
-                );
-            } else if (probabilidad >= 0.30) {
-                nivelRiesgo = "BAJO";
-                mensajeDetallado = String.format(
-                    "🟢 RIESGO BAJO (%.1f%%) - El cliente probablemente se quedará. " +
-                    "Mantener servicio actual.",
-                    probabilidad * 100
-                );
-            } else {
-                nivelRiesgo = "MUY BAJO";
-                mensajeDetallado = String.format(
-                    "✅ RIESGO MUY BAJO (%.1f%%) - Cliente fiel y estable. " +
-                    "Excelente retención.",
-                    probabilidad * 100
-                );
-            }
-
-            // 10. Guardar en BD
             Prediccion nuevaPrediccion = new Prediccion();
             nuevaPrediccion.setEdad(edad);
             nuevaPrediccion.setScore(probabilidad);
             nuevaPrediccion.setResultado(abandona ? 1 : 0);
+            nuevaPrediccion.setPais(pais);           // <--- IMPORTANTE PARA EL DASHBOARD
+            nuevaPrediccion.setProductos(productos); // <--- IMPORTANTE PARA EL DASHBOARD
+            
             repository.save(nuevaPrediccion);
 
-            // 11. Preparar respuesta
+            // 7. Respuesta JSON (Sincronizada con Dashboard)
             Map<String, Object> respuesta = new HashMap<>();
             respuesta.put("score", probabilidad);
-            respuesta.put("probabilidad", String.format("%.2f%%", probabilidad * 100));
-            respuesta.put("abandona", abandona);
+            respuesta.put("probabilidad", String.format("%.1f%%", probabilidad * 100));
             respuesta.put("nivelRiesgo", nivelRiesgo);
-            respuesta.put("prediccion", abandona ? "Churn" : "No Churn");
-            respuesta.put("mensaje", mensajeDetallado);
-
-            // Resumen para la tarjeta/display
-            String resumen = String.format(
-                "%s | Probabilidad: %.1f%% | %s",
-                getEmojiPorRiesgo(nivelRiesgo),
-                probabilidad * 100,
-                abandona ? "Requerirá atención" : "Sin acción requerida"
-            );
-            respuesta.put("resumen", resumen);
-            
-            // Color para el frontend
+            respuesta.put("resultado", abandona ? "Churn" : "No Churn");
+            respuesta.put("factoresClave", factoresClave.stream().limit(3).collect(Collectors.toList()));
             respuesta.put("colorRiesgo", getColorPorRiesgo(nivelRiesgo));
-            
-            System.out.println("Respuesta: " + respuesta);
-            System.out.println("=".repeat(50) + "\n");
-            
+
             return respuesta;
 
         } catch (Exception e) {
-            System.err.println("ERROR en predicción:");
             e.printStackTrace();
-            
             Map<String, Object> error = new HashMap<>();
             error.put("error", e.getMessage());
             return error;
         }
     }
-    
+
+    // --- MÉTODOS AUXILIARES ---
+
+    private double extraerProbabilidad(Map<FieldName, ?> results) {
+        for (Object value : results.values()) {
+            if (value instanceof ProbabilityDistribution) {
+                ProbabilityDistribution<?> pd = (ProbabilityDistribution<?>) value;
+                for (Object cat : pd.getCategories()) {
+                    String s = cat.toString();
+                    if (s.equals("1") || s.equalsIgnoreCase("true") || s.equalsIgnoreCase("churn")) {
+                        return pd.getProbability(cat);
+                    }
+                }
+                return pd.getProbability(new ArrayList<>(pd.getCategories()).get(pd.getCategories().size()-1));
+            }
+        }
+        return 0.0;
+    }
+
+    private String determinarNivelRiesgo(double prob) {
+        if (prob >= 0.75) return "ALTO";
+        if (prob >= 0.58) return "MEDIO";
+        if (prob >= 0.30) return "BAJO";
+        return "MUY BAJO";
+    }
+
     private int obtenerEntero(Map<String, Object> map, String key, int defaultValue) {
         try {
-            if (map.containsKey(key)) {
-                Object value = map.get(key);
-                if (value instanceof Number) {
-                    return ((Number) value).intValue();
-                } else if (value != null) {
-                    return Integer.parseInt(value.toString());
-                }
-            }
-        } catch (Exception e) {
-            System.err.println("Error parseando " + key);
-        }
+            Object v = map.get(key);
+            if (v instanceof Number) return ((Number) v).intValue();
+            if (v != null) return Integer.parseInt(v.toString());
+        } catch (Exception e) {}
         return defaultValue;
-    }
-    
-    private String getEmojiPorRiesgo(String nivelRiesgo) {
-        switch(nivelRiesgo.toUpperCase()) {
-            case "ALTO": return "🔴";
-            case "MEDIO": return "🟡";
-            case "BAJO": return "🟢";
-            case "MUY BAJO": return "✅";
-            default: return "📊";
-        }
     }
 
     private String getColorPorRiesgo(String nivelRiesgo) {
-        switch(nivelRiesgo.toUpperCase()) {
-            case "ALTO": return "#dc3545"; // Rojo
-            case "MEDIO": return "#ffc107"; // Amarillo
-            case "BAJO": return "#28a745"; // Verde
-            case "MUY BAJO": return "#17a2b8"; // Azul
-            default: return "#6c757d"; // Gris
+        switch(nivelRiesgo) {
+            case "ALTO": return "#dc3545";
+            case "MEDIO": return "#ffc107";
+            case "BAJO": return "#28a745";
+            default: return "#17a2b8";
         }
     }
 }

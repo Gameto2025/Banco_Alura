@@ -1,0 +1,1389 @@
+2025-12-27 11:30:22 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'logging.level.com.alura.churn' to org.springframework.boot.logging.LogLevel:
+
+    Property: logging.level.com.alura.churn
+    Value: "INFO     # Logs de tu aplicaciÃ³n"
+    Origin: class path resource [application.properties] - 34:31
+    Reason: failed to convert java.lang.String to org.springframework.boot.logging.LogLevel (caused by java.lang.IllegalArgumentException: No enum constant org.springframework.boot.logging.LogLevel.INFO     # Logs de tu aplicaciÃ³n)
+
+Action:
+
+Update your application's configuration. The following values are valid:
+
+    DEBUG
+    ERROR
+    FATAL
+    INFO
+    OFF
+    TRACE
+    WARN
+
+2025-12-27 11:32:06 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'logging.level.com.alura.churn' to org.springframework.boot.logging.LogLevel:
+
+    Property: logging.level.com.alura.churn
+    Value: "INFO     # Logs de tu aplicaciÃ³n"
+    Origin: class path resource [application.properties] - 34:31
+    Reason: failed to convert java.lang.String to org.springframework.boot.logging.LogLevel (caused by java.lang.IllegalArgumentException: No enum constant org.springframework.boot.logging.LogLevel.INFO     # Logs de tu aplicaciÃ³n)
+
+Action:
+
+Update your application's configuration. The following values are valid:
+
+    DEBUG
+    ERROR
+    FATAL
+    INFO
+    OFF
+    TRACE
+    WARN
+
+2025-12-27 11:35:24 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'logging.level.com.alura.churn' to org.springframework.boot.logging.LogLevel:
+
+    Property: logging.level.com.alura.churn
+    Value: "INFO          # Logs de tu aplicaciÃ³n"
+    Origin: class path resource [application.properties] - 34:31
+    Reason: failed to convert java.lang.String to org.springframework.boot.logging.LogLevel (caused by java.lang.IllegalArgumentException: No enum constant org.springframework.boot.logging.LogLevel.INFO          # Logs de tu aplicaciÃ³n)
+
+Action:
+
+Update your application's configuration. The following values are valid:
+
+    DEBUG
+    ERROR
+    FATAL
+    INFO
+    OFF
+    TRACE
+    WARN
+
+2025-12-27 11:35:48 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'logging.level.com.alura.churn' to org.springframework.boot.logging.LogLevel:
+
+    Property: logging.level.com.alura.churn
+    Value: "INFO          # Logs de tu aplicaciÃ³n"
+    Origin: class path resource [application.properties] - 34:31
+    Reason: failed to convert java.lang.String to org.springframework.boot.logging.LogLevel (caused by java.lang.IllegalArgumentException: No enum constant org.springframework.boot.logging.LogLevel.INFO          # Logs de tu aplicaciÃ³n)
+
+Action:
+
+Update your application's configuration. The following values are valid:
+
+    DEBUG
+    ERROR
+    FATAL
+    INFO
+    OFF
+    TRACE
+    WARN
+
+2025-12-27 11:44:09 INFO  [main] com.alura.churn.ChurnApplication: Starting ChurnApplication using Java 21.0.9 with PID 22692 (C:\Users\Gabriel\Desktop\churn\churn\target\classes started by Gabriel in C:\Users\Gabriel\Desktop\churn)
+2025-12-27 11:44:09 INFO  [main] com.alura.churn.ChurnApplication: No active profile set, falling back to 1 default profile: "default"
+2025-12-27 11:44:10 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-27 11:44:10 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 88 ms. Found 1 JPA repository interface.
+2025-12-27 11:44:11 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-12-27 11:44:11 INFO  [main] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-12-27 11:44:11 INFO  [main] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-12-27 11:44:11 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-12-27 11:44:11 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1999 ms
+2025-12-27 11:44:11 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-12-27 11:44:11 INFO  [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/churn_db user=SA
+2025-12-27 11:44:11 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-12-27 11:44:11 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration: H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/churn_db'
+2025-12-27 11:44:12 WARN  [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties': Could not bind properties to 'JpaProperties' : prefix=spring.jpa, ignoreInvalidFields=false, ignoreUnknownFields=true
+2025-12-27 11:44:12 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-12-27 11:44:12 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-12-27 11:44:12 INFO  [main] o.a.catalina.core.StandardService: Stopping service [Tomcat]
+2025-12-27 11:44:12 INFO  [main] o.s.b.a.l.ConditionEvaluationReportLogger: 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-12-27 11:44:12 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.jpa.show-sql' to boolean:
+
+    Property: spring.jpa.show-sql
+    Value: "true              # Muestra SQL en consola (Ãºtil para debug)"
+    Origin: class path resource [application.properties] - 20:21
+    Reason: failed to convert java.lang.String to boolean (caused by java.lang.IllegalArgumentException: Invalid boolean value 'true              # Muestra SQL en consola (Ãºtil para debug)')
+
+Action:
+
+Update your application's configuration
+
+2025-12-27 11:46:23 INFO  [main] com.alura.churn.ChurnApplication: Starting ChurnApplication using Java 21.0.9 with PID 18040 (C:\Users\Gabriel\Desktop\churn\churn\target\classes started by Gabriel in C:\Users\Gabriel\Desktop\churn)
+2025-12-27 11:46:23 INFO  [main] com.alura.churn.ChurnApplication: No active profile set, falling back to 1 default profile: "default"
+2025-12-27 11:46:24 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-27 11:46:24 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 86 ms. Found 1 JPA repository interface.
+2025-12-27 11:46:25 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-12-27 11:46:25 INFO  [main] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-12-27 11:46:25 INFO  [main] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-12-27 11:46:25 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-12-27 11:46:25 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1752 ms
+2025-12-27 11:46:25 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-12-27 11:46:25 INFO  [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/churn_db user=SA
+2025-12-27 11:46:25 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-12-27 11:46:26 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration: H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/churn_db'
+2025-12-27 11:46:26 INFO  [main] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-27 11:46:26 INFO  [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-12-27 11:46:26 INFO  [main] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-12-27 11:46:26 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-27 11:46:26 WARN  [main] org.hibernate.orm.deprecation: HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-27 11:46:27 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-27 11:46:27 DEBUG [main] org.hibernate.SQL: create table predicciones (id bigint generated by default as identity, edad integer, fecha timestamp(6), resultado integer, score float(53), primary key (id))
+2025-12-27 11:46:27 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 11:46:29 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-27 11:46:29 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page: class path resource [static/index.html]
+2025-12-27 11:46:30 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path ''
+2025-12-27 11:46:30 INFO  [main] com.alura.churn.ChurnApplication: Started ChurnApplication in 6.782 seconds (process running for 7.193)
+2025-12-27 11:46:56 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-27 11:46:56 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-12-27 11:46:56 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Completed initialization in 1 ms
+2025-12-27 11:47:06 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 11:47:26 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select count(*) from predicciones p1_0
+2025-12-27 11:47:26 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select count(p1_0.id) from predicciones p1_0 where p1_0.resultado=?
+2025-12-27 11:48:26 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 11:48:33 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 11:48:41 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 11:48:45 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 11:48:57 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select count(*) from predicciones p1_0
+2025-12-27 11:48:57 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select count(p1_0.id) from predicciones p1_0 where p1_0.resultado=?
+2025-12-27 11:53:09 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 11:53:18 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 11:56:20 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 11:56:27 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 11:56:39 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 11:56:48 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 12:11:12 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 12:11:15 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 12:11:18 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 12:11:24 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 12:11:29 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 12:11:32 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select count(*) from predicciones p1_0
+2025-12-27 12:11:32 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select count(p1_0.id) from predicciones p1_0 where p1_0.resultado=?
+2025-12-27 12:15:52 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 12:15:52 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-12-27 12:15:52 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-12-27 12:16:20 INFO  [main] com.alura.churn.ChurnApplication: Starting ChurnApplication using Java 21.0.9 with PID 13560 (C:\Users\Gabriel\Desktop\churn\churn\target\classes started by Gabriel in C:\Users\Gabriel\Desktop\churn)
+2025-12-27 12:16:20 INFO  [main] com.alura.churn.ChurnApplication: No active profile set, falling back to 1 default profile: "default"
+2025-12-27 12:16:21 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-27 12:16:21 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 116 ms. Found 1 JPA repository interface.
+2025-12-27 12:16:22 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-12-27 12:16:22 INFO  [main] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-12-27 12:16:22 INFO  [main] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-12-27 12:16:22 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-12-27 12:16:22 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1907 ms
+2025-12-27 12:16:22 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-12-27 12:16:22 INFO  [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/churn_db user=SA
+2025-12-27 12:16:22 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-12-27 12:16:22 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration: H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/churn_db'
+2025-12-27 12:16:22 INFO  [main] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-27 12:16:23 INFO  [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-12-27 12:16:23 INFO  [main] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-12-27 12:16:23 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-27 12:16:23 WARN  [main] org.hibernate.orm.deprecation: HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-27 12:16:24 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-27 12:16:24 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 12:16:26 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-27 12:16:26 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page: class path resource [static/index.html]
+2025-12-27 12:16:26 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path ''
+2025-12-27 12:16:26 INFO  [main] com.alura.churn.ChurnApplication: Started ChurnApplication in 7.061 seconds (process running for 7.499)
+2025-12-27 12:16:33 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-27 12:16:33 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-12-27 12:16:33 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Completed initialization in 1 ms
+2025-12-27 12:16:38 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select count(*) from predicciones p1_0
+2025-12-27 12:16:38 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select count(p1_0.id) from predicciones p1_0 where p1_0.resultado=?
+2025-12-27 12:16:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:16:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:16:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:06 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:08 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:08 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:18 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:18 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:18 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:19 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:19 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:19 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:30 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:36 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:36 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:17:36 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:18:06 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:18:06 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:18:06 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:18:37 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:18:37 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:18:37 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:18:53 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:18:53 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:18:53 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:19:07 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:19:07 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:19:07 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:19:37 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:19:37 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:19:37 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:20:07 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:20:07 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:20:07 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:20:37 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:20:37 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:20:37 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:20:44 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:20:45 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:20:45 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:21:15 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:21:15 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:21:15 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:21:36 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:21:36 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:21:36 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:21:58 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 12:22:06 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:22:06 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:22:06 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:22:09 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:22:09 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:22:09 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:22:24 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 12:22:36 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:22:36 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:22:36 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:23:55 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:23:55 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:23:55 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:24:07 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:24:07 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:24:07 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:24:37 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:24:37 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:24:37 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:25:07 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:25:07 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:25:07 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:25:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:25:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:25:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:26:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:26:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:26:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:27:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:27:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:27:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:28:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:28:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:28:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:29:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:29:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:29:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:30:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:30:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:30:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:31:43 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:31:43 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:31:43 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:32:07 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:32:07 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:32:07 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:32:37 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:32:37 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:32:37 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:33:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:33:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:33:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:34:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:34:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:34:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:35:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:35:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:35:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:36:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:36:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:36:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:36:47 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:36:48 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:36:48 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:37:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:37:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:37:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:38:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:38:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:38:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:39:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:39:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:39:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:40:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:40:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:40:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:41:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:41:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:41:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:42:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:42:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:42:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:43:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:43:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:43:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:44:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:44:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:44:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:45:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:45:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:45:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:46:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:46:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:46:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:47:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:47:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:47:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:48:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:48:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:48:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:48:55 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:48:56 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:48:56 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:00 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:00 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:00 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:02 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:02 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:02 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:04 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:04 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:04 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:06 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:06 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:06 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:09 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select count(*) from predicciones p1_0
+2025-12-27 12:49:09 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select count(p1_0.id) from predicciones p1_0 where p1_0.resultado=?
+2025-12-27 12:49:30 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:30 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:30 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:32 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:32 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:32 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:33 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:33 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:33 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:33 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:33 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:33 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:49:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:50:01 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:50:01 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:50:01 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:50:14 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 12:50:14 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-12-27 12:50:14 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-12-27 12:50:28 INFO  [main] com.alura.churn.ChurnApplication: Starting ChurnApplication using Java 21.0.9 with PID 23584 (C:\Users\Gabriel\Desktop\churn\churn\target\classes started by Gabriel in C:\Users\Gabriel\Desktop\churn)
+2025-12-27 12:50:28 INFO  [main] com.alura.churn.ChurnApplication: No active profile set, falling back to 1 default profile: "default"
+2025-12-27 12:50:29 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-27 12:50:29 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 91 ms. Found 1 JPA repository interface.
+2025-12-27 12:50:30 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-12-27 12:50:30 INFO  [main] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-12-27 12:50:30 INFO  [main] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-12-27 12:50:30 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-12-27 12:50:30 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2004 ms
+2025-12-27 12:50:30 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-12-27 12:50:30 INFO  [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/churn_db user=SA
+2025-12-27 12:50:30 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-12-27 12:50:30 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration: H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/churn_db'
+2025-12-27 12:50:30 INFO  [main] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-27 12:50:30 INFO  [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-12-27 12:50:31 INFO  [main] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-12-27 12:50:31 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-27 12:50:31 WARN  [main] org.hibernate.orm.deprecation: HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-27 12:50:32 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-27 12:50:32 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 12:50:34 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-27 12:50:34 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page: class path resource [static/index.html]
+2025-12-27 12:50:34 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path ''
+2025-12-27 12:50:34 INFO  [main] com.alura.churn.ChurnApplication: Started ChurnApplication in 7.174 seconds (process running for 7.635)
+2025-12-27 12:50:43 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-27 12:50:43 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-12-27 12:50:43 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Completed initialization in 1 ms
+2025-12-27 12:50:43 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:50:44 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:50:44 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:50:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:50:48 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:50:48 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:50:59 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 12:51:01 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:51:01 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:51:01 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:51:03 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:51:03 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:51:03 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:51:31 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:51:31 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:51:31 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:51:33 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:51:33 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:51:33 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:01 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:01 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:01 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:03 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:03 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:03 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:31 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:31 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:31 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:33 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:33 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:52:33 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:53:03 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:53:03 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:53:03 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:53:33 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:53:33 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:53:33 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:53:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:53:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:53:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:54:03 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:54:03 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:54:03 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:54:33 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:54:33 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:54:33 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:54:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:54:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:54:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:55:03 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:55:03 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:55:03 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:55:33 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:55:33 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:55:33 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:55:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:55:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:55:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:56:03 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:56:03 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:56:03 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:56:33 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:56:33 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:56:33 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:56:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:56:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:56:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:57:03 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:57:03 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:57:03 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:57:33 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:57:33 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:57:33 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:57:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:57:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:57:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:58:03 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:58:03 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:58:03 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:58:33 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:58:33 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:58:33 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:58:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:58:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:58:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:59:03 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:59:03 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:59:03 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:59:33 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:59:33 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:59:33 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:59:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:59:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 12:59:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:00:03 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:00:03 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:00:03 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:00:33 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:00:33 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:00:33 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:00:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:00:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:00:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:01:03 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:01:03 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:01:03 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:01:33 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:01:33 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:01:33 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:01:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:01:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:01:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:02:03 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:02:03 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:02:03 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:02:33 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:02:33 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:02:33 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:02:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:02:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:02:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:03:03 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:03:03 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:03:03 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:03:33 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:03:33 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:03:33 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:03:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:03:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:03:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:04:03 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:04:03 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:04:03 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:04:33 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:04:33 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:04:33 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:04:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:04:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:04:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:05:03 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:05:03 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:05:03 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:05:33 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:05:33 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:05:33 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:05:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:05:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:05:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:06:03 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:06:03 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:06:03 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:06:33 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:06:33 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:06:33 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:06:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:06:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:06:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:07:03 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:07:03 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:07:03 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:07:33 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:07:33 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:07:33 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:07:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:07:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:07:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:08:03 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:08:03 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:08:03 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:08:33 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:08:33 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:08:33 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:08:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:08:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:08:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:09:03 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:09:03 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:09:03 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:09:33 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:09:33 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:09:33 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:09:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:09:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:09:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:10:03 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:10:03 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:10:03 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:10:33 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:10:33 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:10:33 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:10:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:10:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:10:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:11:03 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:11:03 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:11:03 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:11:34 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:11:34 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:11:34 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:11:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:11:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:11:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:12:04 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:12:04 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:12:04 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:12:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:12:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:12:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:12:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:12:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:12:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:13:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:13:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:13:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:13:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:13:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:13:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:14:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:14:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:14:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:14:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:14:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:14:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:15:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:15:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:15:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:15:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:15:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:15:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:16:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:16:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:16:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:16:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:16:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:16:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:17:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:17:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:17:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:17:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:17:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:17:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:18:04 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:18:04 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:18:04 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:18:34 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:18:34 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:18:34 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:18:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:18:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:18:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:19:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:19:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:19:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:19:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:19:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:19:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:20:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:20:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:20:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:20:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:20:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:20:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:21:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:21:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:21:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:21:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:21:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:21:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:22:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:22:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:22:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:22:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:22:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:22:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:23:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:23:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:23:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:23:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:23:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:23:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:24:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:24:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:24:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:24:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:24:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:24:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:25:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:25:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:25:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:25:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:25:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:25:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:26:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:26:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:26:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:26:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:26:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:26:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:27:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:27:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:27:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:27:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:27:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:27:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:03 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:03 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:03 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:22 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 13:28:36 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 13:28:41 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:42 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:42 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:47 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:47 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:47 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:53 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:53 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:53 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:54 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:54 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:54 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:54 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:54 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:28:54 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:00 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:00 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:00 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:11 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:11 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:11 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:38 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:38 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:38 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:41 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:41 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:41 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:42 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:42 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:42 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:29:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:30:12 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:30:12 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:30:12 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:30:32 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:30:32 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:30:32 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:30:42 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:30:42 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:30:42 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:31:11 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:31:11 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:31:11 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:31:42 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:31:42 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:31:42 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:32:12 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:32:12 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:32:12 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:32:41 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:32:41 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:32:41 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:33:12 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:33:12 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:33:12 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:33:42 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:33:42 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:33:42 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:34:12 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:34:12 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:34:12 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:34:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:34:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:34:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:35:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:35:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:35:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:36:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:36:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:36:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:37:35 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:37:35 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:37:35 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 13:38:26 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 13:41:14 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 13:41:14 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-12-27 13:41:14 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-12-27 13:41:43 INFO  [main] com.alura.churn.ChurnApplication: Starting ChurnApplication using Java 21.0.9 with PID 16980 (C:\Users\Gabriel\Desktop\churn\churn\target\classes started by Gabriel in C:\Users\Gabriel\Desktop\churn)
+2025-12-27 13:41:43 INFO  [main] com.alura.churn.ChurnApplication: No active profile set, falling back to 1 default profile: "default"
+2025-12-27 13:41:44 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-27 13:41:44 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 93 ms. Found 1 JPA repository interface.
+2025-12-27 13:41:44 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-12-27 13:41:45 INFO  [main] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-12-27 13:41:45 INFO  [main] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-12-27 13:41:45 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-12-27 13:41:45 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1995 ms
+2025-12-27 13:41:45 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-12-27 13:41:45 INFO  [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/churn_db user=SA
+2025-12-27 13:41:45 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-12-27 13:41:45 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration: H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/churn_db'
+2025-12-27 13:41:45 INFO  [main] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-27 13:41:45 INFO  [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-12-27 13:41:45 INFO  [main] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-12-27 13:41:46 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-27 13:41:46 WARN  [main] org.hibernate.orm.deprecation: HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-27 13:41:47 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-27 13:41:47 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 13:41:49 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-27 13:41:49 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page: class path resource [static/index.html]
+2025-12-27 13:41:49 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path ''
+2025-12-27 13:41:49 INFO  [main] com.alura.churn.ChurnApplication: Started ChurnApplication in 7.008 seconds (process running for 7.438)
+2025-12-27 13:41:56 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-27 13:41:56 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-12-27 13:41:56 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Completed initialization in 1 ms
+2025-12-27 14:26:09 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 14:26:10 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-12-27 14:26:10 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-12-27 14:58:26 INFO  [main] com.alura.churn.ChurnApplication: Starting ChurnApplication using Java 21.0.9 with PID 9884 (C:\Users\Gabriel\Desktop\churn\churn\target\classes started by Gabriel in C:\Users\Gabriel\Desktop\churn)
+2025-12-27 14:58:26 INFO  [main] com.alura.churn.ChurnApplication: No active profile set, falling back to 1 default profile: "default"
+2025-12-27 14:58:27 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-27 14:58:27 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 107 ms. Found 1 JPA repository interface.
+2025-12-27 14:58:28 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-12-27 14:58:28 INFO  [main] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-12-27 14:58:28 INFO  [main] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-12-27 14:58:28 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-12-27 14:58:28 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1984 ms
+2025-12-27 14:58:28 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-12-27 14:58:28 INFO  [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/churn_db user=SA
+2025-12-27 14:58:28 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-12-27 14:58:28 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration: H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/churn_db'
+2025-12-27 14:58:28 INFO  [main] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-27 14:58:28 INFO  [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-12-27 14:58:28 INFO  [main] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-12-27 14:58:29 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-27 14:58:29 WARN  [main] org.hibernate.orm.deprecation: HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-27 14:58:30 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-27 14:58:30 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 14:58:32 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-27 14:58:32 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page: class path resource [static/index.html]
+2025-12-27 14:58:32 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path ''
+2025-12-27 14:58:32 INFO  [main] com.alura.churn.ChurnApplication: Started ChurnApplication in 7.367 seconds (process running for 7.851)
+2025-12-27 14:58:47 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-27 14:58:47 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-12-27 14:58:47 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Completed initialization in 4 ms
+2025-12-27 14:59:10 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:11 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:11 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:18 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:18 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:18 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:18 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:18 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:18 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:19 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:19 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:19 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:38 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 14:59:40 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:41 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:41 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:47 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:47 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:47 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:48 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:48 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:48 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:53 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:53 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:53 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:53 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:53 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:53 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:53 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:53 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 14:59:54 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:00:10 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:00:10 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:00:10 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:00:41 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:00:41 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:00:41 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:01:11 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:01:11 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:01:11 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:01:41 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:01:41 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:01:41 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:01:43 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:01:44 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:01:44 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:02:10 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:02:13 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:02:13 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:02:13 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:02:43 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:02:43 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:02:43 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:03:13 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:03:13 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:03:13 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:11:20 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 15:11:20 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-12-27 15:11:20 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-12-27 15:13:03 INFO  [main] com.alura.churn.ChurnApplication: Starting ChurnApplication using Java 21.0.9 with PID 11276 (C:\Users\Gabriel\Desktop\churn\churn\target\classes started by Gabriel in C:\Users\Gabriel\Desktop\churn)
+2025-12-27 15:13:03 INFO  [main] com.alura.churn.ChurnApplication: No active profile set, falling back to 1 default profile: "default"
+2025-12-27 15:13:04 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-27 15:13:04 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 100 ms. Found 1 JPA repository interface.
+2025-12-27 15:13:05 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-12-27 15:13:05 INFO  [main] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-12-27 15:13:05 INFO  [main] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-12-27 15:13:05 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-12-27 15:13:05 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2187 ms
+2025-12-27 15:13:05 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-12-27 15:13:06 INFO  [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/churn_db user=SA
+2025-12-27 15:13:06 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-12-27 15:13:06 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration: H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/churn_db'
+2025-12-27 15:13:06 INFO  [main] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-27 15:13:06 INFO  [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-12-27 15:13:06 INFO  [main] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-12-27 15:13:07 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-27 15:13:07 WARN  [main] org.hibernate.orm.deprecation: HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-27 15:13:08 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-27 15:13:08 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 15:13:10 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-27 15:13:10 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page: class path resource [static/index.html]
+2025-12-27 15:13:10 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path ''
+2025-12-27 15:13:10 INFO  [main] com.alura.churn.ChurnApplication: Started ChurnApplication in 7.568 seconds (process running for 8.025)
+2025-12-27 15:13:30 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-27 15:13:30 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-12-27 15:13:30 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Completed initialization in 1 ms
+2025-12-27 15:13:34 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:13:34 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:13:34 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:13:36 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:13:36 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:13:37 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:13:50 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 15:13:53 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:13:53 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:13:53 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:13:55 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:13:55 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:13:55 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:02 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:03 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:03 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:03 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:03 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:03 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:03 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:03 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:03 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:06 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:06 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:06 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:11 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:11 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:11 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:19 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:19 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:20 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:20 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:20 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:21 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:21 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:21 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:21 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:21 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:21 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:22 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:22 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:22 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:22 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:23 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:23 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:23 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:14:38 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 15:14:48 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 15:14:50 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 15:14:56 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 15:15:07 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 15:15:12 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:12 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:12 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:19 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:19 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:19 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:19 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:19 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:19 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:24 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:24 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:24 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:25 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:25 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:25 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:25 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:25 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:25 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:25 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:25 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:25 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:26 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:26 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:26 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:31 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:31 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:31 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:34 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:34 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:34 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:42 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:42 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:15:42 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:16:03 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:16:03 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:16:03 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:16:34 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:16:34 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:16:34 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:17:04 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:17:04 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:17:04 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:17:33 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:17:33 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:17:33 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:18:04 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:18:04 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:18:04 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:18:34 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:18:34 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:18:34 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:19:04 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:19:04 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:19:04 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:19:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:19:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:19:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:20:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:20:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:20:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:21:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:21:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:21:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:22:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:22:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:22:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:23:17 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:23:17 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:23:17 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:23:20 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:23:20 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:23:20 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:23:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:23:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:23:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:24:20 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:24:20 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:24:20 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:24:50 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:24:50 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:24:50 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:24:57 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:24:57 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:24:57 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:25:51 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:25:51 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:25:51 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:26:51 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:26:51 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:26:51 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:27:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 15:29:22 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:29:22 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:29:22 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:30:23 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:30:23 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:30:23 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:31:23 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:31:23 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:31:23 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:32:23 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:32:23 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:32:23 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:33:23 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:33:23 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:33:23 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:34:23 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:34:23 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:34:23 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:35:23 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:35:23 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:35:23 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:36:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:36:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:36:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:37:31 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:37:31 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:37:31 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:38:23 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:38:23 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:38:23 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:39:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:39:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:39:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:40:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:40:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:40:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:41:40 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:41:40 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:41:40 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:41:43 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:41:43 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:41:43 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:42:01 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 15:42:06 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:42:06 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:42:06 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:42:13 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:42:13 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:42:13 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:43:06 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:43:06 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:43:06 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:44:06 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:44:06 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:44:06 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:45:06 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:45:06 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:45:06 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:46:06 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:46:06 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:46:06 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:47:06 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:47:06 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:47:06 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:48:06 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:48:06 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:48:06 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:49:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:49:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:49:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:50:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:50:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:50:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:50:56 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:50:56 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:50:56 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:36 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: insert into predicciones (edad,fecha,resultado,score,id) values (?,?,?,?,default)
+2025-12-27 15:51:37 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:37 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:37 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:43 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:43 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:43 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:44 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:44 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:44 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:44 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:44 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:44 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:44 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:44 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:44 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:45 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:45 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:51:45 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:52:37 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:52:37 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:52:37 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:53:38 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:53:38 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:53:38 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:54:38 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:54:38 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:54:38 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:55:38 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:55:38 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:55:38 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:56:38 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:56:38 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:56:38 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:57:38 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:57:38 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:57:38 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:58:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:58:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:58:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:59:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:59:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 15:59:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:00:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:00:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:00:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:01:11 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 16:01:11 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-12-27 16:01:11 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-12-27 16:01:42 INFO  [main] com.alura.churn.ChurnApplication: Starting ChurnApplication using Java 21.0.9 with PID 19600 (C:\Users\Gabriel\Desktop\churn\churn\target\classes started by Gabriel in C:\Users\Gabriel\Desktop\churn)
+2025-12-27 16:01:42 INFO  [main] com.alura.churn.ChurnApplication: No active profile set, falling back to 1 default profile: "default"
+2025-12-27 16:01:43 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-27 16:01:43 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 106 ms. Found 1 JPA repository interface.
+2025-12-27 16:01:44 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-12-27 16:01:44 INFO  [main] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-12-27 16:01:44 INFO  [main] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-12-27 16:01:44 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-12-27 16:01:44 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1916 ms
+2025-12-27 16:01:44 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-12-27 16:01:44 INFO  [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/churn_db user=SA
+2025-12-27 16:01:44 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-12-27 16:01:44 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration: H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/churn_db'
+2025-12-27 16:01:45 INFO  [main] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-27 16:01:45 INFO  [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-12-27 16:01:45 INFO  [main] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-12-27 16:01:45 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-27 16:01:45 WARN  [main] org.hibernate.orm.deprecation: HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-27 16:01:46 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-27 16:01:46 DEBUG [main] org.hibernate.SQL: alter table if exists predicciones add column pais integer
+2025-12-27 16:01:46 DEBUG [main] org.hibernate.SQL: alter table if exists predicciones add column productos integer
+2025-12-27 16:01:46 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 16:01:48 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-27 16:01:48 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page: class path resource [static/index.html]
+2025-12-27 16:01:48 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path ''
+2025-12-27 16:01:48 INFO  [main] com.alura.churn.ChurnApplication: Started ChurnApplication in 6.701 seconds (process running for 7.114)
+2025-12-27 16:02:01 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-27 16:02:01 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-12-27 16:02:01 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet: Completed initialization in 2 ms
+2025-12-27 16:02:02 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:02:02 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:02:02 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:02:08 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:02:08 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:02:08 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:02:09 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:02:09 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:02:09 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:02:09 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:02:09 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:02:09 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:01 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:01 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:01 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:04 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:04 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:04 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:05 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:05 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:05 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:06 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:06 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:03:06 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:04:07 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:04:07 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:04:07 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:05:07 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:05:07 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:05:07 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:06:07 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:06:07 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:06:07 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:07:07 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:07:07 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:07:07 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:08:07 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:08:07 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:08:07 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:09:07 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:09:07 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:09:07 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:10:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:10:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:10:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:11:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:11:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:11:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:12:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:12:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:12:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:13:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:13:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:13:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:14:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:14:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:14:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:15:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:15:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:15:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:16:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:16:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:16:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:17:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:17:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:17:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:18:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:18:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:18:46 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:19:46 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:19:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:19:46 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:20:46 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:20:46 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:20:46 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:21:46 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:21:46 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:21:46 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:23:34 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:23:34 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:23:34 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:02 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:02 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:02 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:03 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:03 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:03 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:26 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: insert into predicciones (edad,fecha,pais,productos,resultado,score,id) values (?,?,?,?,?,?,default)
+2025-12-27 16:24:29 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:29 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:29 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:33 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:33 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:24:33 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:25:30 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:25:30 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:25:30 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:26:30 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:26:30 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:26:30 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:27:30 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:27:30 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:27:30 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:28:30 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:28:30 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:28:30 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:28:45 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:28:45 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:28:45 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:31:59 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:31:59 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:31:59 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:31:59 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:31:59 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:31:59 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
+2025-12-27 16:36:24 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-27 16:36:24 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-12-27 16:36:24 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.

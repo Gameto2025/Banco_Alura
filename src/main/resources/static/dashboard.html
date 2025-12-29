@@ -143,9 +143,9 @@
         async function cargarDatos() {
             try {
                 const [statsRes, topRes, allRes] = await Promise.all([
-                    fetch('http://localhost:8080/api/churn/estadisticas'),
-                    fetch('http://localhost:8080/api/churn/top-riesgo'),
-                    fetch('http://localhost:8080/api/churn/clientes')
+                    fetch('https://banco-alura.onrender.com/api/churn/estadisticas'),
+                    fetch('https://banco-alura.onrender.com/api/churn/top-riesgo'),
+                    fetch('https://banco-alura.onrender.com/api/churn/clientes')
                 ]);
                 const stats = await statsRes.json();
                 const topClientes = await topRes.json();

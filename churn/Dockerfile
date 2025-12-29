@@ -1,13 +1,10 @@
-# Etapa 1: Construcción (Build)
+# ETAPA 1: Construcción (Necesitas el JDK para compilar)
 FROM maven:3.8.5-openjdk-17 AS build
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Etapa 2: Ejecución (Runtime)
-FROM openjdk:17-jdk-slim
-# Copia el archivo .jar generado en la etapa anterior
+# ETAPA 2: Ejecución (Solo necesitas el JRE para correr la app)
+FROM eclipse-temurin:17-jre-alpine
 COPY --from=build /target/*.jar app.jar
-# Expone el puerto por defecto de Spring Boot
 EXPOSE 8080
-# Comando para ejecutar la aplicación
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]

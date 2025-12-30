@@ -1,33 +1,42 @@
-2025-12-28 18:39:46 INFO  [main] com.alura.churn.ChurnApplication: Starting ChurnApplication using Java 17.0.17 with PID 14104 (C:\Users\Gabriel\Desktop\churn\churn\target\classes started by Gabriel in C:\Users\Gabriel\Desktop\churn)
-2025-12-28 18:39:46 INFO  [main] com.alura.churn.ChurnApplication: No active profile set, falling back to 1 default profile: "default"
-2025-12-28 18:39:47 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-28 18:39:47 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 84 ms. Found 1 JPA repository interface.
-2025-12-28 18:39:48 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
-2025-12-28 18:39:48 INFO  [main] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-12-28 18:39:48 INFO  [main] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-12-28 18:39:48 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-12-28 18:39:48 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1915 ms
-2025-12-28 18:39:48 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
-2025-12-28 18:39:49 INFO  [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/churn_db user=SA
-2025-12-28 18:39:49 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
-2025-12-28 18:39:49 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration: H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/churn_db'
-2025-12-28 18:39:49 INFO  [main] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-28 18:39:49 INFO  [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-12-28 18:39:49 INFO  [main] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-12-28 18:39:49 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-28 18:39:50 WARN  [main] org.hibernate.orm.deprecation: HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-12-28 18:39:50 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-28 18:39:50 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-28 18:39:52 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-28 18:39:52 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page: class path resource [static/index.html]
-2025-12-28 18:39:53 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path ''
-2025-12-28 18:39:53 INFO  [main] com.alura.churn.ChurnApplication: Started ChurnApplication in 6.961 seconds (process running for 7.376)
-2025-12-28 18:40:00 INFO  [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-12-28 18:40:00 INFO  [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
-2025-12-28 18:40:00 INFO  [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet: Completed initialization in 0 ms
-2025-12-28 18:40:01 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
-2025-12-28 18:40:01 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
-2025-12-28 18:40:01 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL: select p1_0.id,p1_0.edad,p1_0.fecha,p1_0.pais,p1_0.productos,p1_0.resultado,p1_0.score from predicciones p1_0
-2025-12-28 20:00:03 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-28 20:00:03 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
-2025-12-28 20:00:03 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-12-29 21:14:32 INFO  [main] c.alura.churn.ChurnApplicationTests: Starting ChurnApplicationTests using Java 17.0.17 with PID 14176 (started by Gabriel in C:\Users\Gabriel\Desktop\churn)
+2025-12-29 21:14:32 INFO  [main] c.alura.churn.ChurnApplicationTests: No active profile set, falling back to 1 default profile: "default"
+2025-12-29 21:14:33 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-29 21:14:33 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+2025-12-29 21:14:34 INFO  [main] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-29 21:14:34 INFO  [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-12-29 21:14:34 INFO  [main] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-12-29 21:14:34 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-29 21:14:34 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-12-29 21:14:34 INFO  [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/churn_db user=SA
+2025-12-29 21:14:34 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-12-29 21:14:34 WARN  [main] org.hibernate.orm.deprecation: HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-29 21:14:35 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-29 21:14:35 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-29 21:14:37 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-29 21:14:37 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page: class path resource [static/index.html]
+2025-12-29 21:14:38 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration: H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/churn_db'
+2025-12-29 21:14:38 INFO  [main] c.alura.churn.ChurnApplicationTests: Started ChurnApplicationTests in 5.802 seconds (process running for 7.06)
+2025-12-29 21:14:38 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-29 21:14:38 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-12-29 21:14:38 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-12-29 21:32:10 INFO  [main] c.alura.churn.ChurnApplicationTests: Starting ChurnApplicationTests using Java 17.0.17 with PID 11636 (started by Gabriel in C:\Users\Gabriel\Desktop\churn)
+2025-12-29 21:32:10 INFO  [main] c.alura.churn.ChurnApplicationTests: No active profile set, falling back to 1 default profile: "default"
+2025-12-29 21:32:11 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-29 21:32:11 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 84 ms. Found 1 JPA repository interface.
+2025-12-29 21:32:12 INFO  [main] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-29 21:32:12 INFO  [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-12-29 21:32:12 INFO  [main] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-12-29 21:32:13 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-29 21:32:13 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-12-29 21:32:13 INFO  [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/churn_db user=SA
+2025-12-29 21:32:13 INFO  [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-12-29 21:32:13 WARN  [main] org.hibernate.orm.deprecation: HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-29 21:32:14 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-29 21:32:14 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-29 21:32:16 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-29 21:32:16 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping: Adding welcome page: class path resource [static/index.html]
+2025-12-29 21:32:17 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration: H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/churn_db'
+2025-12-29 21:32:17 INFO  [main] c.alura.churn.ChurnApplicationTests: Started ChurnApplicationTests in 7.308 seconds (process running for 8.793)
+2025-12-29 21:32:17 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-29 21:32:17 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-12-29 21:32:17 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.

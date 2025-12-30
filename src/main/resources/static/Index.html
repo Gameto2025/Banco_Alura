@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Churn – Banco Alura</title>
-    <meta http-equiv="refresh" content="0; url=/dashboard.html">
+     meta= http-equiv"refresh" content="0; url= /dashboard.html"
     <style>
         body { font-family: sans-serif; display: flex; justify-content: center; padding: 20px; background: #f4f7f6; }
         .card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
@@ -100,7 +100,7 @@ async function realizarPrediccion() {
     console.log("Datos enviados al servidor:", datos);
 
     try {
-        const response = await fetch('http://localhost:8080/api/churn/predict', {
+        const response = await fetch('https://banco-alura.onrender.com/api/predict', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(datos)

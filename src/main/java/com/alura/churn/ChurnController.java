@@ -5,8 +5,12 @@ import com.alura.churn.repository.PrediccionRepository;
 import com.alura.churn.ChurnService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller; // Importante para las vistas
-import org.springframework.web.servlet.ModelAndView; // Para manejar páginas
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+
+// Imports adicionales para la redirección segura
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,21 +28,28 @@ public class ChurnController {
     @Autowired
     private PrediccionRepository repository;
 
-    // ==================== RUTAS DE NAVEGACIÓN (CORRECCIÓN 404) ====================
+    // ==================== RUTAS DE NAVEGACIÓN ====================
     
-    // Esto permite que al ir a la raíz se cargue el index.html de static
     @GetMapping("/")
     public ModelAndView home() {
         return new ModelAndView("redirect:/index.html");
     }
 
-    // ==================== PREDICCIÓN (MÉTODO EXISTENTE) ====================
+    /**
+     * Método forzado para evitar el error 404 del botón en el dashboard
+     */
+    @GetMapping("/nuevo")
+    public void redireccionar(HttpServletResponse response) throws IOException {
+        response.sendRedirect("/index.html");
+    }
+
+    // ==================== PREDICCIÓN ====================
     @PostMapping("/predict")
     public Map<String, Object> predict(@RequestBody Map<String, Object> datos) {
         return churnService.predecir(datos);
     }
 
-    // ==================== ENDPOINTS PARA DASHBOARD (DATOS REALES) ====================
+    // ==================== ENDPOINTS PARA DASHBOARD ====================
 
     @GetMapping("/estadisticas")
     public Map<String, Object> getEstadisticasCompletas() {

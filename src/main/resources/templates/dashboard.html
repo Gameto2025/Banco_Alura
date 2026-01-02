@@ -236,18 +236,38 @@
             return sugerencias[nivel] || 'Sin sugerencias.';
         }
 
-        function renderGraficoRiesgo(dist) {
-            const ctx = document.getElementById('graficoRiesgo').getContext('2d');
-            if (chartRiesgoInstance) chartRiesgoInstance.destroy();
-            chartRiesgoInstance = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Alto', 'Medio', 'Bajo', 'Muy Bajo'],
-                    datasets: [{ data: [dist.ALTO || 0, dist.MEDIO || 0, dist.BAJO || 0, dist['MUY BAJO'] || 0], backgroundColor: ['#dc3545', '#fd7e14', '#20c997', '#0d6efd'], borderWidth: 0 }]
-                },
-                options: { maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } } }, cutout: '75%' }
-            });
+        function renderGraficoRiesgo(dist = {}) {
+    const ctx = document.getElementById('graficoRiesgo').getContext('2d');
+    if (chartRiesgoInstance) chartRiesgoInstance.destroy();
+
+    chartRiesgoInstance = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Alto', 'Medio', 'Bajo', 'Muy Bajo'],
+            datasets: [{
+                data: [
+                    dist.ALTO || 0,
+                    dist.MEDIO || 0,
+                    dist.BAJO || 0,
+                    dist['MUY BAJO'] || 0
+                ],
+                backgroundColor: ['#dc3545', '#fd7e14', '#20c997', '#0d6efd'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { usePointStyle: true, padding: 20 }
+                }
+            },
+            cutout: '75%'
         }
+    });
+}
+
 
         function filtrarTabla() {
             const r = document.getElementById('filtroRiesgo').value;

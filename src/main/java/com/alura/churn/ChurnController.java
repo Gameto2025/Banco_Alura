@@ -2,16 +2,10 @@ package com.alura.churn;
 
 import com.alura.churn.model.Prediccion;
 import com.alura.churn.repository.PrediccionRepository;
-import com.alura.churn.ChurnService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.servlet.ModelAndView;
-import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
@@ -25,51 +19,75 @@ public class ChurnController {
     @Autowired
     private PrediccionRepository repository;
 
-    // Redirección de la raíz a la página de inicio
-    @GetMapping("/")
-    public ModelAndView home() {
-        return new ModelAndView("index"); // Busca templates/index.html
-    }
-
-    // Ruta específica para el botón del dashboard
-    @GetMapping("/nuevo")
-    public ModelAndView redireccionar() {
-        return new ModelAndView("index"); 
-    }
-
+    // ==================== PREDICCIÓN ====================
     @PostMapping("/predict")
     public Map<String, Object> predict(@RequestBody Map<String, Object> datos) {
         return churnService.predecir(datos);
     }
 
+    // ==================== ESTADÍSTICAS DASHBOARD ====================
     @GetMapping("/estadisticas")
-    public Map<String, Object> getEstadisticasCompletas() {
+    public Map<String, Object> getEstadisticas() {
+
         List<Prediccion> todas = repository.findAll();
         long total = todas.size();
-        long churns = todas.stream().filter(p -> p.getResultado() == 1).count();
-        long noChurns = total - churns;
-        double scorePromedio = todas.stream().mapToDouble(Prediccion::getScore).average().orElse(0.0);
-        Map<String, Long> distribucionRiesgo = todas.stream().collect(Collectors.groupingBy(p -> getNivelRiesgo(p.getScore()), Collectors.counting()));
+        long churns = todas.stream()
+                .filter(p -> p.getResultado() == 1)
+                .count();
+
+        double scorePromedio = todas.stream()
+                .mapToDouble(Prediccion::getScore)
+                .average()
+                .orElse(0.0);
+
         Map<String, Object> stats = new HashMap<>();
         stats.put("totalClientes", total);
         stats.put("churns", churns);
-        stats.put("noChurns", noChurns);
-        stats.put("tasaChurn", total > 0 ? String.format("%.1f%%", ((double) churns / total) * 100) : "0%");
+        stats.put("noChurns", total - churns);
+        stats.put("tasaChurn", total > 0
+                ? String.format("%.1f%%", ((double) churns / total) * 100)
+                : "0%");
         stats.put("scorePromedio", String.format("%.1f%%", scorePromedio * 100));
-        stats.put("distribucionRiesgo", distribucionRiesgo);
+
         return stats;
     }
 
-    @GetMapping("/top-riesgo")
-    public List<Map<String, Object>> getTopClientesRiesgo() {
-        return repository.findAll().stream().sorted((p1, p2) -> Double.compare(p2.getScore(), p1.getScore())).limit(10).map(this::mapearPrediccion).collect(Collectors.toList());
-    }
-
+    // ==================== CLIENTES ====================
     @GetMapping("/clientes")
-    public List<Map<String, Object>> getAllClientes() {
-        return repository.findAll().stream().sorted((p1, p2) -> (p1.getFecha() != null && p2.getFecha() != null) ? p2.getFecha().compareTo(p1.getFecha()) : 0).map(this::mapearPrediccion).collect(Collectors.toList());
+    public List<Map<String, Object>> getClientes() {
+        return repository.findAll()
+                .stream()
+                .sorted(Comparator.comparing(Prediccion::getFecha,
+                        Comparator.nullsLast(Comparator.reverseOrder())))
+                .map(this::mapearPrediccion)
+                .collect(Collectors.toList());
     }
 
+    // ==================== TOP RIESGO ====================
+    @GetMapping("/top-riesgo")
+    public List<Map<String, Object>> getTopRiesgo() {
+        return repository.findAll()
+                .stream()
+                .sorted((a, b) -> Double.compare(b.getScore(), a.getScore()))
+                .limit(10)
+                .map(this::mapearPrediccion)
+                .collect(Collectors.toList());
+    }
+
+    // ==================== RESET BASE H2 ====================
+    @DeleteMapping("/reset")
+    public Map<String, Object> reset() {
+        long count = repository.count();
+        repository.deleteAll();
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("mensaje", "Base H2 limpiada correctamente");
+        response.put("registros_eliminados", count);
+
+        return response;
+    }
+
+    // ==================== MÉTODOS AUXILIARES ====================
     private Map<String, Object> mapearPrediccion(Prediccion p) {
         Map<String, Object> dto = new HashMap<>();
         dto.put("id", p.getId());
@@ -77,21 +95,16 @@ public class ChurnController {
         dto.put("score", p.getScore());
         dto.put("probabilidad", String.format("%.1f%%", p.getScore() * 100));
         dto.put("resultado", p.getResultado() == 1 ? "Churn" : "No Churn");
-        dto.put("fecha", p.getFecha() != null ? p.getFecha().toString().split("T")[0] : "N/A");
-        dto.put("nivelRiesgo", getNivelRiesgo(p.getScore()));
-        dto.put("color", getColorRiesgo(p.getScore()));
+        dto.put("fecha", p.getFecha() != null
+                ? p.getFecha().toString().split("T")[0]
+                : "N/A");
+        dto.put("nivelRiesgo", nivelRiesgo(p.getScore()));
         return dto;
     }
 
-    private String getNivelRiesgo(double score) {
+    private String nivelRiesgo(double score) {
         if (score >= 0.75) return "ALTO";
         if (score >= 0.50) return "MEDIO";
         return "BAJO";
-    }
-
-    private String getColorRiesgo(double score) {
-        if (score >= 0.75) return "#dc3545"; 
-        if (score >= 0.50) return "#ffc107"; 
-        return "#28a745"; 
     }
 }

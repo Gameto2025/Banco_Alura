@@ -7,11 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
-
-// Imports adicionales para la redirección segura
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,48 +25,31 @@ public class ChurnController {
     @Autowired
     private PrediccionRepository repository;
 
-    // ==================== RUTAS DE NAVEGACIÓN ====================
-    
+    // Redirección de la raíz a la página de inicio
     @GetMapping("/")
     public ModelAndView home() {
-        return new ModelAndView("redirect:/index.html");
+        return new ModelAndView("index"); // Busca templates/index.html
     }
 
-    /**
-     * Método forzado para evitar el error 404 del botón en el dashboard
-     */
+    // Ruta específica para el botón del dashboard
     @GetMapping("/nuevo")
-    public void redireccionar(HttpServletResponse response) throws IOException {
-        response.sendRedirect("/index.html");
+    public ModelAndView redireccionar() {
+        return new ModelAndView("index"); 
     }
 
-    // ==================== PREDICCIÓN ====================
     @PostMapping("/predict")
     public Map<String, Object> predict(@RequestBody Map<String, Object> datos) {
         return churnService.predecir(datos);
     }
 
-    // ==================== ENDPOINTS PARA DASHBOARD ====================
-
     @GetMapping("/estadisticas")
     public Map<String, Object> getEstadisticasCompletas() {
         List<Prediccion> todas = repository.findAll();
         long total = todas.size();
-        
         long churns = todas.stream().filter(p -> p.getResultado() == 1).count();
         long noChurns = total - churns;
-        
-        double scorePromedio = todas.stream()
-                .mapToDouble(Prediccion::getScore)
-                .average()
-                .orElse(0.0);
-
-        Map<String, Long> distribucionRiesgo = todas.stream()
-                .collect(Collectors.groupingBy(
-                        p -> getNivelRiesgo(p.getScore()),
-                        Collectors.counting()
-                ));
-
+        double scorePromedio = todas.stream().mapToDouble(Prediccion::getScore).average().orElse(0.0);
+        Map<String, Long> distribucionRiesgo = todas.stream().collect(Collectors.groupingBy(p -> getNivelRiesgo(p.getScore()), Collectors.counting()));
         Map<String, Object> stats = new HashMap<>();
         stats.put("totalClientes", total);
         stats.put("churns", churns);
@@ -77,43 +57,18 @@ public class ChurnController {
         stats.put("tasaChurn", total > 0 ? String.format("%.1f%%", ((double) churns / total) * 100) : "0%");
         stats.put("scorePromedio", String.format("%.1f%%", scorePromedio * 100));
         stats.put("distribucionRiesgo", distribucionRiesgo);
-        
         return stats;
     }
 
     @GetMapping("/top-riesgo")
     public List<Map<String, Object>> getTopClientesRiesgo() {
-        return repository.findAll().stream()
-                .sorted((p1, p2) -> Double.compare(p2.getScore(), p1.getScore()))
-                .limit(10)
-                .map(this::mapearPrediccion)
-                .collect(Collectors.toList());
+        return repository.findAll().stream().sorted((p1, p2) -> Double.compare(p2.getScore(), p1.getScore())).limit(10).map(this::mapearPrediccion).collect(Collectors.toList());
     }
 
     @GetMapping("/clientes")
     public List<Map<String, Object>> getAllClientes() {
-        return repository.findAll().stream()
-                .sorted((p1, p2) -> {
-                    if (p1.getFecha() != null && p2.getFecha() != null) {
-                        return p2.getFecha().compareTo(p1.getFecha());
-                    }
-                    return 0;
-                })
-                .map(this::mapearPrediccion)
-                .collect(Collectors.toList());
+        return repository.findAll().stream().sorted((p1, p2) -> (p1.getFecha() != null && p2.getFecha() != null) ? p2.getFecha().compareTo(p1.getFecha()) : 0).map(this::mapearPrediccion).collect(Collectors.toList());
     }
-
-    @DeleteMapping("/reset")
-    public Map<String, Object> resetearDatos() {
-        long count = repository.count();
-        repository.deleteAll();
-        Map<String, Object> response = new HashMap<>();
-        response.put("mensaje", "Base de datos H2 limpiada con éxito");
-        response.put("registros_eliminados", count);
-        return response;
-    }
-
-    // ==================== MÉTODOS AUXILIARES ====================
 
     private Map<String, Object> mapearPrediccion(Prediccion p) {
         Map<String, Object> dto = new HashMap<>();

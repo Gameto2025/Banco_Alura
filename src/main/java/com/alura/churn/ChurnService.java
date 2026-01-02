@@ -95,9 +95,24 @@ public class ChurnService {
             nuevaPrediccion.setEdad(edad);
             nuevaPrediccion.setScore(probabilidad);
             nuevaPrediccion.setResultado(abandona ? 1 : 0);
-            nuevaPrediccion.setPais(pais);           // <--- IMPORTANTE PARA EL DASHBOARD
-            nuevaPrediccion.setProductos(productos); // <--- IMPORTANTE PARA EL DASHBOARD
-            
+            nuevaPrediccion.setPais(pais);
+            nuevaPrediccion.setProductos(productos);
+
+            // ======= FACTORES Y RECOMENDACIÓN (NUEVO) =======
+            String factoresTxt = factoresClave.stream()
+                    .limit(3)
+                    .collect(Collectors.joining(" | "));
+
+            String recomendacion =
+                    nivelRiesgo.equals("ALTO") ? "📞 Contactar de inmediato"
+                : nivelRiesgo.equals("MEDIO") ? "📧 Enviar incentivo"
+                : nivelRiesgo.equals("BAJO") ? "🙂 Seguimiento normal"
+                : "⭐ Cliente fidelizado";
+
+            nuevaPrediccion.setFactores(factoresTxt);
+            nuevaPrediccion.setRecomendacion(recomendacion);
+
+            // AHORA SÍ SE GUARDA COMPLETA
             repository.save(nuevaPrediccion);
 
             // 7. Respuesta JSON (Sincronizada con Dashboard)
@@ -106,7 +121,8 @@ public class ChurnService {
             respuesta.put("probabilidad", String.format("%.1f%%", probabilidad * 100));
             respuesta.put("nivelRiesgo", nivelRiesgo);
             respuesta.put("resultado", abandona ? "Churn" : "No Churn");
-            respuesta.put("factoresClave", factoresClave.stream().limit(3).collect(Collectors.toList()));
+            respuesta.put("factoresClave", factoresTxt);
+            respuesta.put("recomendacion", recomendacion);
             respuesta.put("colorRiesgo", getColorPorRiesgo(nivelRiesgo));
 
             return respuesta;

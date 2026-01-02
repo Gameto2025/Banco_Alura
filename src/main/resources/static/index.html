@@ -75,6 +75,26 @@
             display: none;
             text-align: center;
         }
+
+        /* BOTÓN PRINCIPAL – CONSULTAR CHURN */
+.btn-consultar {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: linear-gradient(135deg,#d97706,#b45309);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-consultar:hover {
+    background: linear-gradient(135deg,#b45309,#92400e);
+    transform: translateY(-1px);
+}
     </style>
 </head>
 
@@ -110,7 +130,9 @@
         </select>
     </div>
 
-    <button onclick="realizarPrediccion()">Consultar Churn</button>
+   <button class="btn-consultar" onclick="realizarPrediccion()">
+    🧠 Consultar Churn
+</button>
 
     <button class="btn-dashboard" onclick="window.location.href='/dashboard'">
     📊 Ver Dashboard de Riesgos

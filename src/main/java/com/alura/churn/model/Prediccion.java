@@ -18,6 +18,12 @@ public class Prediccion {
     private Integer pais;      //
     private Integer productos; //
     
+    @Column(length = 300)
+    private String factores;
+
+    @Column(length = 120)
+    private String recomendacion;
+
     private LocalDateTime fecha = LocalDateTime.now();
 
     public Prediccion() {}
@@ -51,4 +57,20 @@ public class Prediccion {
     public Integer getProductos() { return productos; }
 
     public LocalDateTime getFecha() { return fecha; }
+
+    public String getFactores() {
+    return factores;
+}
+
+    public void setFactores(String factores) {
+        this.factores = factores;
+    }
+
+    public String getRecomendacion() {
+        return recomendacion;
+    }
+
+    public void setRecomendacion(String recomendacion) {
+        this.recomendacion = recomendacion;
+}
 }

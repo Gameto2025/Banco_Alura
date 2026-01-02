@@ -95,18 +95,25 @@ public class ChurnController {
 
     // ==================== MÉTODOS AUXILIARES ====================
     private Map<String, Object> mapearPrediccion(Prediccion p) {
-        Map<String, Object> dto = new HashMap<>();
-        dto.put("id", p.getId());
-        dto.put("edad", p.getEdad());
-        dto.put("score", p.getScore());
-        dto.put("probabilidad", String.format("%.1f%%", p.getScore() * 100));
-        dto.put("resultado", p.getResultado() == 1 ? "Churn" : "No Churn");
-        dto.put("fecha", p.getFecha() != null
-                ? p.getFecha().toString().split("T")[0]
-                : "N/A");
-        dto.put("nivelRiesgo", nivelRiesgo(p.getScore()));
-        return dto;
-    }
+    Map<String, Object> dto = new HashMap<>();
+
+    dto.put("id", p.getId());
+    dto.put("edad", p.getEdad());
+    dto.put("score", p.getScore());
+    dto.put("probabilidad", String.format("%.1f%%", p.getScore() * 100));
+    dto.put("resultado", p.getResultado() == 1 ? "Churn" : "No Churn");
+    dto.put("nivelRiesgo", nivelRiesgo(p.getScore()));
+
+    dto.put("fecha", p.getFecha() != null
+            ? p.getFecha().toString().split("T")[0]
+            : "N/A");
+
+    // 🔥 EXPLICABILIDAD
+    dto.put("factores", p.getFactores());
+    dto.put("recomendacion", p.getRecomendacion());
+
+    return dto;
+}
 
     // Niveles CONSISTENTES con el servicio y el dashboard
     private String nivelRiesgo(double score) {

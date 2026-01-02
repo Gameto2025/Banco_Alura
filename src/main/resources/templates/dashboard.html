@@ -19,6 +19,7 @@ body{background:#f4f7f6}
 .badge-bajo{background:var(--bajo)}
 .badge-muy-bajo{background:var(--muybajo)}
 .chart-container{height:280px}
+canvas#graficoRiesgo{width:100%!important;height:260px!important;max-height:260px!important}
 </style>
 </head>
 
@@ -50,7 +51,7 @@ body{background:#f4f7f6}
 <div class="card-header fw-bold">Distribución de Riesgo</div>
 <div class="card-body">
 <div class="chart-container">
-<canvas id="graficoRiesgo" height="280"></canvas>
+<canvas id="graficoRiesgo"></canvas>
 </div>
 </div>
 </div>
@@ -115,18 +116,24 @@ tablaClientesBody.innerHTML=clientes.map(c=>`
 
 function renderGrafico(dist={}){
 if(chart) chart.destroy();
-chart=new Chart(document.getElementById('graficoRiesgo'),{
+chart = new Chart(document.getElementById('graficoRiesgo'), {
 type:'doughnut',
 data:{
 labels:['ALTO','MEDIO','BAJO','MUY BAJO'],
-datasets:[{data:[dist.ALTO||0,dist.MEDIO||0,dist.BAJO||0,dist['MUY BAJO']||0],
-backgroundColor:['#dc3545','#fd7e14','#20c997','#0d6efd']}]
+datasets:[{
+data:[dist.ALTO||0,dist.MEDIO||0,dist.BAJO||0,dist['MUY BAJO']||0],
+backgroundColor:['#dc3545','#fd7e14','#20c997','#0d6efd']
+}]
 },
-options:{cutout:'70%'}
+options:{
+responsive:true,
+maintainAspectRatio:false,
+cutout:'70%'
+}
 });
 }
 
-document.addEventListener('DOMContentLoaded',cargarDatos);
+document.addEventListener('DOMContentLoaded', cargarDatos);
 </script>
 
 </body>

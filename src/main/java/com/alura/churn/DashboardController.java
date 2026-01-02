@@ -4,17 +4,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class WebController {
+public class DashboardController {
 
-    // Carga el index.html
     @GetMapping("/")
     public String home() {
         return "redirect:/index.html";
     }
 
-    // Carga el dashboard.html
     @GetMapping("/dashboard")
     public String dashboard() {
-        return "dashboard";
+        return "dashboard"; // templates/dashboard.html
     }
 }

@@ -110,8 +110,8 @@
 
     <button onclick="realizarPrediccion()">Consultar Churn</button>
 
-    <a href="/dashboard" class="btn-dashboard">
-        📊 Ver Dashboard de Riesgos
+    <a href="/dashboard" class="btn btn-success w-100 mt-3">
+    📊 Ver Dashboard de Riesgos
     </a>
 
     <div id="resultado">
@@ -138,13 +138,22 @@ async function realizarPrediccion() {
 
     const data = await response.json();
 
-    document.getElementById('mensajeRespuesta').innerText =
-        data.resultado || "Predicción realizada";
+   document.getElementById('mensajeRespuesta').innerText =
+    "Nivel de riesgo de churn: " + data.nivelRiesgo;
 
     document.getElementById('probabilidad').innerText =
-        "Probabilidad: " + (data.score * 100).toFixed(1) + "%";
+    "Probabilidad: " + data.probabilidad;
 
-    document.getElementById('resultado').style.display = 'block';
+    const resultadoDiv = document.getElementById('resultado');
+
+if (data.colorRiesgo) {
+    resultadoDiv.style.border = "2px solid " + data.colorRiesgo;
+    resultadoDiv.style.color = data.colorRiesgo;
+}
+
+// Mostrar el resultado
+    resultadoDiv.style.display = 'block';
+
 }
 </script>
 

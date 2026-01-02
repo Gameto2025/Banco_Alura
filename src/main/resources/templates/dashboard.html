@@ -1,281 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Gestión de Retención (Churn)</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --color-alto: #dc3545;
-            --color-medio: #fd7e14;
-            --color-bajo: #20c997;
-            --color-muy-bajo: #0d6efd;
-        }
-        
-        body { background-color: #f4f7f6; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
-        .card { border-radius: 12px; border: none; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); }
-        .navbar { box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        
-        .badge-riesgo { font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; color: white; padding: 0.4em 0.8em; }
-        .badge-alto, .bg-riesgo-alto { background-color: var(--color-alto) !important; }
-        .badge-medio, .bg-riesgo-medio { background-color: var(--color-medio) !important; }
-        .badge-bajo, .bg-riesgo-bajo { background-color: var(--color-bajo) !important; }
-        .badge-muy-bajo, .bg-riesgo-muy-bajo { background-color: var(--color-muy-bajo) !important; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Churn – Banco Alura</title>
 
-        .progress { height: 8px; background-color: #e9ecef; border-radius: 4px; overflow: hidden; }
-        .stat-number { font-size: 1.8rem; font-weight: 800; color: #2d3436; }
-        .chart-container { position: relative; height: 280px; width: 100%; }
-        .table thead th { background-color: #f8f9fa; text-transform: uppercase; font-size: 0.7rem; color: #636e72; border-top: none; }
-    </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+ --alto:#dc3545; --medio:#fd7e14; --bajo:#20c997; --muybajo:#0d6efd;
+}
+body{background:#f4f7f6}
+.badge-alto{background:var(--alto)}
+.badge-medio{background:var(--medio)}
+.badge-bajo{background:var(--bajo)}
+.badge-muy-bajo{background:var(--muybajo)}
+.chart-container{height:280px}
+</style>
 </head>
+
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="fas fa-shield-alt text-info me-2"></i>Dashboard Churn Banco Alura</a>
-            <div class="d-flex">
-                <span class="text-light me-3 d-none d-md-inline-block pt-1">Actualizado: <span id="fechaActualizacion">--:--</span></span>
-                <button class="btn btn-light btn-sm me-2"   onclick="window.location.href='/'"></button><i class="fas fa-calculator me-1"></i> Nueva Predicción</button> 
-                <button class="btn btn-info btn-sm" onclick="cargarDatos()"><i class="fas fa-sync-alt me-1"></i>Refrescar</button>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar navbar-dark bg-dark">
+<div class="container-fluid">
+<span class="navbar-brand">Dashboard Churn Banco Alura</span>
+<div>
+<button class="btn btn-light btn-sm me-2" onclick="location.href='/'">Nueva Predicción</button>
+<button class="btn btn-info btn-sm" onclick="cargarDatos()">Refrescar</button>
+</div>
+</div>
+</nav>
 
-    <div class="container-fluid mt-4">
-        <div class="row">
-            <div class="col-lg-3 col-xl-2">
-                <div class="card mb-4">
-                    <div class="card-header bg-white fw-bold"><i class="fas fa-filter me-2 text-primary"></i>Filtros</div>
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold">Nivel de Riesgo</label>
-                            <select class="form-select form-select-sm" id="filtroRiesgo" onchange="filtrarTabla()">
-                                <option value="todos">Todos</option>
-                                <option value="ALTO">Alto Riesgo</option>
-                                <option value="MEDIO">Riesgo Medio</option>
-                                <option value="BAJO">Riesgo Bajo</option>
-                                <option value="MUY BAJO">Muy Bajo</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="container-fluid mt-4">
 
-            <div class="col-lg-9 col-xl-10">
-                <div class="row g-3 mb-4" id="kpiContainer">
-                    <div class="col-md-3"><div class="card p-3 text-center"><div class="stat-number" id="totalClientes">0</div><div class="small text-muted">Evaluados</div></div></div>
-                    <div class="col-md-3"><div class="card p-3 text-center"><div class="stat-number text-danger" id="totalChurn">0</div><div class="small text-muted">Probable Churn</div></div></div>
-                    <div class="col-md-3"><div class="card p-3 text-center"><div class="stat-number" id="tasaChurn">0%</div><div class="small text-muted">Tasa de Alerta</div></div></div>
-                    <div class="col-md-3"><div class="card p-3 text-center"><div class="stat-number text-success" id="scorePromedio">0%</div><div class="small text-muted">Confianza AI</div></div></div>
-                </div>
+<div class="row g-3 mb-4">
+<div class="col"><div class="card p-3 text-center"><div id="totalClientes" class="fs-3 fw-bold">0</div>Evaluados</div></div>
+<div class="col"><div class="card p-3 text-center"><div id="totalChurn" class="fs-3 fw-bold text-danger">0</div>Probable Churn</div></div>
+<div class="col"><div class="card p-3 text-center"><div id="tasaChurn" class="fs-3 fw-bold">0%</div>Tasa</div></div>
+<div class="col"><div class="card p-3 text-center"><div id="scorePromedio" class="fs-3 fw-bold text-success">0%</div>Confianza AI</div></div>
+</div>
 
-                <div class="row g-4">
-                    <div class="col-xl-4">
-                        <div class="card h-100">
-                            <div class="card-header bg-white fw-bold">Distribución de Riesgo</div>
-                            <div class="card-body"><div class="chart-container"><canvas id="graficoRiesgo"></canvas></div></div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-xl-8">
-                        <div class="card h-100">
-                            <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-danger"><i class="fas fa-fire me-2"></i>Prioridad Inmediata (Top 10 Riesgo)</span>
-                            </div>
-                            <div class="card-body p-0">
-                                <div class="table-responsive">
-                                    <table class="table table-hover align-middle mb-0">
-                                        <thead>
-                                            <tr><th class="ps-3">ID</th><th>Probabilidad</th><th>Riesgo</th><th>Estado</th><th class="text-end pe-3">Análisis</th></tr>
-                                        </thead>
-                                        <tbody id="tablaTopRiesgoBody"></tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="row g-4">
 
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header bg-white fw-bold">Listado Completo de Evaluación</div>
-                            <div class="card-body p-0">
-                                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
-                                    <table class="table table-sm table-hover align-middle">
-                                        <thead class="sticky-top bg-white">
-                                            <tr><th class="ps-3">ID</th><th>Edad</th><th>Score (%)</th><th>Riesgo</th><th>Resultado</th><th>Fecha</th></tr>
-                                        </thead>
-                                        <tbody id="tablaClientesBody"></tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="col-xl-4">
+<div class="card">
+<div class="card-header fw-bold">Distribución de Riesgo</div>
+<div class="card-body">
+<div class="chart-container">
+<canvas id="graficoRiesgo" height="280"></canvas>
+</div>
+</div>
+</div>
+</div>
 
-    <div class="modal fade" id="modalDetalles" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 shadow">
-                <div class="modal-header bg-light">
-                    <h5 class="modal-title fw-bold">Ficha de Cliente</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body" id="modalDetallesBody"></div>
-            </div>
-        </div>
-    </div>
+<div class="col-xl-8">
+<div class="card">
+<div class="card-header fw-bold text-danger">Top 10 Riesgo</div>
+<table class="table mb-0">
+<thead><tr><th>ID</th><th>Prob.</th><th>Riesgo</th><th>Estado</th></tr></thead>
+<tbody id="tablaTopRiesgoBody"></tbody>
+</table>
+</div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        let todosClientes = [];
-        let chartRiesgoInstance = null;
+<div class="col-12">
+<div class="card">
+<div class="card-header fw-bold">Todos los clientes</div>
+<table class="table table-sm mb-0">
+<thead><tr><th>ID</th><th>Edad</th><th>Score</th><th>Riesgo</th><th>Resultado</th><th>Fecha</th></tr></thead>
+<tbody id="tablaClientesBody"></tbody>
+</table>
+</div>
+</div>
 
-        const getClaseRiesgo = (nivel) => `badge-${nivel.toLowerCase().replace(' ', '-')}`;
-        const getBgRiesgo = (nivel) => `bg-riesgo-${nivel.toLowerCase().replace(' ', '-')}`;
+</div>
+</div>
 
-        async function cargarDatos() {
-            try {
-                const [statsRes, topRes, allRes] = await Promise.all([
-                    fetch('https://banco-alura.onrender.com/api/churn/estadisticas'),
-                    fetch('https://banco-alura.onrender.com/api/churn/top-riesgo'),
-                    fetch('https://banco-alura.onrender.com/api/churn/clientes')
-                ]);
-                const stats = await statsRes.json();
-                const topClientes = await topRes.json();
-                todosClientes = await allRes.json();
+<script>
+let chart=null, clientes=[];
 
-                renderKPIs(stats);
-                renderGraficoRiesgo(stats.distribucionRiesgo);
-                renderTablaTop(topClientes);
-                renderTablaGeneral(todosClientes);
-                document.getElementById('fechaActualizacion').textContent = new Date().toLocaleTimeString();
-            } catch (error) { console.error("Error:", error); }
-        }
+async function cargarDatos(){
+const [s,t,a]=await Promise.all([
+fetch('/api/churn/estadisticas'),
+fetch('/api/churn/top-riesgo'),
+fetch('/api/churn/clientes')
+]);
+const stats=await s.json();
+const top=await t.json();
+clientes=await a.json();
 
-        function renderKPIs(s) {
-            document.getElementById('totalClientes').textContent = s.totalClientes || 0;
-            document.getElementById('totalChurn').textContent = s.churns || 0;
-            document.getElementById('tasaChurn').textContent = s.tasaChurn || '0%';
-            document.getElementById('scorePromedio').textContent = s.scorePromedio || '0%';
-        }
+totalClientes.textContent=stats.totalClientes;
+totalChurn.textContent=stats.churns;
+tasaChurn.textContent=stats.tasaChurn;
+scorePromedio.textContent=stats.scorePromedio;
 
-        function renderTablaTop(data) {
-            const body = document.getElementById('tablaTopRiesgoBody');
-            body.innerHTML = data.map(c => `
-                <tr>
-                    <td class="ps-3 fw-bold">#${c.id}</td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="progress flex-grow-1 me-2"><div class="progress-bar ${getBgRiesgo(c.nivelRiesgo)}" style="width: ${c.score * 100}%"></div></div>
-                            <span class="small fw-bold">${(c.score * 100).toFixed(1)}%</span>
-                        </div>
-                    </td>
-                    <td><span class="badge badge-riesgo ${getClaseRiesgo(c.nivelRiesgo)}">${c.nivelRiesgo}</span></td>
-                    <td><span class="text-${c.resultado === 'Churn' ? 'danger' : 'success'} small fw-bold">${c.resultado}</span></td>
-                    <td class="text-end pe-3"><button class="btn btn-sm btn-outline-secondary" onclick="verDetalles(${c.id})"><i class="fas fa-search-plus"></i></button></td>
-                </tr>`).join('');
-        }
+renderGrafico(stats.distribucionRiesgo||{});
+tablaTopRiesgoBody.innerHTML=top.map(c=>`
+<tr>
+<td>#${c.id}</td>
+<td>${(c.score*100).toFixed(1)}%</td>
+<td><span class="badge badge-${c.nivelRiesgo.toLowerCase().replace(' ','-')}">${c.nivelRiesgo}</span></td>
+<td>${c.resultado}</td>
+</tr>`).join('');
 
-        function renderTablaGeneral(data) {
-            const body = document.getElementById('tablaClientesBody');
-            body.innerHTML = data.map(c => `
-                <tr>
-                    <td class="ps-3">#${c.id}</td>
-                    <td>${c.edad}</td>
-                    <td>${(c.score * 100).toFixed(1)}%</td>
-                    <td><span class="badge badge-riesgo ${getClaseRiesgo(c.nivelRiesgo)}">${c.nivelRiesgo}</span></td>
-                    <td><i class="fas fa-circle me-1 text-${c.resultado === 'Churn' ? 'danger' : 'success'}" style="font-size: 8px"></i>${c.resultado}</td>
-                    <td class="small text-muted">${new Date(c.fecha).toLocaleDateString()}</td>
-                </tr>`).join('');
-        }
-
-        async function verDetalles(id) {
-            const cliente = todosClientes.find(c => c.id === id);
-            if (!cliente) return;
-            const paises = { 0: 'Francia', 1: 'España', 2: 'Alemania' };
-            const nombrePais = paises[cliente.pais] || 'No especificado';
-
-            document.getElementById('modalDetallesBody').innerHTML = `
-                <div class="text-center mb-4"><div class="display-6 fw-bold">#${cliente.id}</div><div class="text-muted small">EXPEDIENTE DEL CLIENTE</div></div>
-                <div class="row g-3 text-center mb-4">
-                    <div class="col-4"><label class="small text-muted d-block">Edad</label><span class="fw-bold">${cliente.edad} años</span></div>
-                    <div class="col-4"><label class="small text-muted d-block">Productos</label><span class="fw-bold">${cliente.productos || 0}</span></div>
-                    <div class="col-4"><label class="small text-muted d-block">País</label><span class="fw-bold">${nombrePais}</span></div>
-                </div>
-                <hr>
-                <h6 class="fw-bold mb-3"><i class="fas fa-brain me-2 text-primary"></i>Análisis de Explicabilidad</h6>
-                <div class="mb-3">
-                    <div class="d-flex justify-content-between small mb-1"><span>Impacto por Edad</span><span class="fw-bold">${cliente.edad > 45 ? 'Alto' : 'Bajo'}</span></div>
-                    <div class="progress"><div class="progress-bar ${cliente.edad > 45 ? 'bg-danger' : 'bg-success'}" style="width: ${cliente.edad > 45 ? '85%' : '25%'}"></div></div>
-                </div>
-                <div class="mb-3">
-                    <div class="d-flex justify-content-between small mb-1"><span>Impacto por Productos (${cliente.productos})</span><span class="fw-bold">${cliente.productos === 1 ? 'Crítico' : 'Estable'}</span></div>
-                    <div class="progress"><div class="progress-bar bg-warning" style="width: ${cliente.productos === 1 ? '90%' : '30%'}"></div></div>
-                </div>
-                <div class="mb-4">
-                    <div class="d-flex justify-content-between small mb-1"><span>Factor Geográfico (${nombrePais})</span><span class="fw-bold">${cliente.pais === 2 ? 'Riesgo Regional' : 'Normal'}</span></div>
-                    <div class="progress"><div class="progress-bar bg-info" style="width: ${cliente.pais === 2 ? '70%' : '20%'}"></div></div>
-                </div>
-                <div class="alert alert-${cliente.resultado === 'Churn' ? 'danger' : 'success'} border-0 shadow-sm">
-                    <h6 class="alert-heading fw-bold"><i class="fas fa-info-circle me-2"></i>Acción Sugerida:</h6>
-                    <p class="mb-0 small">${getSugerencia(cliente.nivelRiesgo)}</p>
-                </div>
-                <div class="d-grid mt-4"><button class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button></div>`;
-            new bootstrap.Modal('#modalDetalles').show();
-        }
-
-        function getSugerencia(nivel) {
-            const sugerencias = { 'ALTO': '⚠️ Contacto inmediato. Programar llamada de retención.', 'MEDIO': '📧 Enviar encuesta y cupón de incentivo.', 'BAJO': '✅ Mantener comunicación estándar.', 'MUY BAJO': '⭐ Cliente fidelizado.' };
-            return sugerencias[nivel] || 'Sin sugerencias.';
-        }
-
-        function renderGraficoRiesgo(dist = {}) {
-    const ctx = document.getElementById('graficoRiesgo').getContext('2d');
-    if (chartRiesgoInstance) chartRiesgoInstance.destroy();
-
-    chartRiesgoInstance = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Alto', 'Medio', 'Bajo', 'Muy Bajo'],
-            datasets: [{
-                data: [
-                    dist.ALTO || 0,
-                    dist.MEDIO || 0,
-                    dist.BAJO || 0,
-                    dist['MUY BAJO'] || 0
-                ],
-                backgroundColor: ['#dc3545', '#fd7e14', '#20c997', '#0d6efd'],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: { usePointStyle: true, padding: 20 }
-                }
-            },
-            cutout: '75%'
-        }
-    });
+tablaClientesBody.innerHTML=clientes.map(c=>`
+<tr>
+<td>#${c.id}</td><td>${c.edad}</td><td>${(c.score*100).toFixed(1)}%</td>
+<td>${c.nivelRiesgo}</td><td>${c.resultado}</td><td>${c.fecha}</td>
+</tr>`).join('');
 }
 
+function renderGrafico(dist={}){
+if(chart) chart.destroy();
+chart=new Chart(document.getElementById('graficoRiesgo'),{
+type:'doughnut',
+data:{
+labels:['ALTO','MEDIO','BAJO','MUY BAJO'],
+datasets:[{data:[dist.ALTO||0,dist.MEDIO||0,dist.BAJO||0,dist['MUY BAJO']||0],
+backgroundColor:['#dc3545','#fd7e14','#20c997','#0d6efd']}]
+},
+options:{cutout:'70%'}
+});
+}
 
-        function filtrarTabla() {
-            const r = document.getElementById('filtroRiesgo').value;
-            const filtrados = r === 'todos' ? todosClientes : todosClientes.filter(c => c.nivelRiesgo === r);
-            renderTablaGeneral(filtrados);
-        }
+document.addEventListener('DOMContentLoaded',cargarDatos);
+</script>
 
-        document.addEventListener('DOMContentLoaded', cargarDatos);
-    </script>
 </body>
 </html>

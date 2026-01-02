@@ -27,29 +27,36 @@ public class ChurnController {
 
     // ==================== ESTADÍSTICAS DASHBOARD ====================
     @GetMapping("/estadisticas")
-    public Map<String, Object> getEstadisticas() {
+    public Map<String, Object> estadisticas() {
 
-        List<Prediccion> todas = repository.findAll();
-        long total = todas.size();
-        long churns = todas.stream()
-                .filter(p -> p.getResultado() == 1)
-                .count();
+        List<Prediccion> lista = repository.findAll();
 
-        double scorePromedio = todas.stream()
-                .mapToDouble(Prediccion::getScore)
-                .average()
-                .orElse(0.0);
+        // Conteo por nivel de riesgo (ALTO/MEDIO/BAJO/MUY BAJO)
+        Map<String, Long> conteo = lista.stream()
+                .collect(Collectors.groupingBy(
+                        p -> nivelRiesgo(p.getScore()),
+                        Collectors.counting()
+                ));
 
-        Map<String, Object> stats = new HashMap<>();
-        stats.put("totalClientes", total);
-        stats.put("churns", churns);
-        stats.put("noChurns", total - churns);
-        stats.put("tasaChurn", total > 0
-                ? String.format("%.1f%%", ((double) churns / total) * 100)
-                : "0%");
-        stats.put("scorePromedio", String.format("%.1f%%", scorePromedio * 100));
+        long total = lista.size();
+        long churns = lista.stream().filter(p -> p.getResultado() == 1).count();
 
-        return stats;
+        Map<String, Object> resp = new HashMap<>();
+        resp.put("totalClientes", total);
+        resp.put("churns", churns);
+        resp.put("tasaChurn", String.format("%.1f%%", total == 0 ? 0 : (churns * 100.0 / total)));
+        resp.put("scorePromedio", String.format("%.1f%%",
+                lista.stream().mapToDouble(Prediccion::getScore).average().orElse(0) * 100));
+
+        // Distribución SIEMPRE con las 4 claves (evita gráficos en blanco)
+        Map<String, Integer> dist = new HashMap<>();
+        dist.put("ALTO", conteo.getOrDefault("ALTO", 0L).intValue());
+        dist.put("MEDIO", conteo.getOrDefault("MEDIO", 0L).intValue());
+        dist.put("BAJO", conteo.getOrDefault("BAJO", 0L).intValue());
+        dist.put("MUY BAJO", conteo.getOrDefault("MUY BAJO", 0L).intValue());
+
+        resp.put("distribucionRiesgo", dist);
+        return resp;
     }
 
     // ==================== CLIENTES ====================
@@ -83,7 +90,6 @@ public class ChurnController {
         Map<String, Object> response = new HashMap<>();
         response.put("mensaje", "Base H2 limpiada correctamente");
         response.put("registros_eliminados", count);
-
         return response;
     }
 
@@ -102,9 +108,11 @@ public class ChurnController {
         return dto;
     }
 
+    // Niveles CONSISTENTES con el servicio y el dashboard
     private String nivelRiesgo(double score) {
         if (score >= 0.75) return "ALTO";
-        if (score >= 0.50) return "MEDIO";
-        return "BAJO";
+        if (score >= 0.58) return "MEDIO";
+        if (score >= 0.30) return "BAJO";
+        return "MUY BAJO";
     }
 }

@@ -2,9 +2,11 @@ package com.alura.churn;
 
 import com.alura.churn.model.Prediccion;
 import com.alura.churn.repository.PrediccionRepository;
-import com.alura.churn.ChurnService;                          // Eliminamos el ".service" intermedio
+import com.alura.churn.ChurnService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller; // Importante para las vistas
+import org.springframework.web.servlet.ModelAndView; // Para manejar páginas
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +24,14 @@ public class ChurnController {
     @Autowired
     private PrediccionRepository repository;
 
+    // ==================== RUTAS DE NAVEGACIÓN (CORRECCIÓN 404) ====================
+    
+    // Esto permite que al ir a la raíz se cargue el index.html de static
+    @GetMapping("/")
+    public ModelAndView home() {
+        return new ModelAndView("redirect:/index.html");
+    }
+
     // ==================== PREDICCIÓN (MÉTODO EXISTENTE) ====================
     @PostMapping("/predict")
     public Map<String, Object> predict(@RequestBody Map<String, Object> datos) {
@@ -30,9 +40,6 @@ public class ChurnController {
 
     // ==================== ENDPOINTS PARA DASHBOARD (DATOS REALES) ====================
 
-    /**
-     * Obtiene estadísticas generales para las tarjetas del Dashboard
-     */
     @GetMapping("/estadisticas")
     public Map<String, Object> getEstadisticasCompletas() {
         List<Prediccion> todas = repository.findAll();
@@ -63,9 +70,6 @@ public class ChurnController {
         return stats;
     }
 
-    /**
-     * Obtiene el Top 10 de clientes con mayor probabilidad de abandono
-     */
     @GetMapping("/top-riesgo")
     public List<Map<String, Object>> getTopClientesRiesgo() {
         return repository.findAll().stream()
@@ -75,9 +79,6 @@ public class ChurnController {
                 .collect(Collectors.toList());
     }
 
-    /**
-     * Obtiene la lista completa de registros para la tabla del Dashboard
-     */
     @GetMapping("/clientes")
     public List<Map<String, Object>> getAllClientes() {
         return repository.findAll().stream()
@@ -91,9 +92,6 @@ public class ChurnController {
                 .collect(Collectors.toList());
     }
 
-    /**
-     * Resetea la base de datos (Útil para pruebas)
-     */
     @DeleteMapping("/reset")
     public Map<String, Object> resetearDatos() {
         long count = repository.count();
@@ -126,8 +124,8 @@ public class ChurnController {
     }
 
     private String getColorRiesgo(double score) {
-        if (score >= 0.75) return "#dc3545"; // Rojo (Bootstrap danger)
-        if (score >= 0.50) return "#ffc107"; // Amarillo (Bootstrap warning)
-        return "#28a745"; // Verde (Bootstrap success)
+        if (score >= 0.75) return "#dc3545"; 
+        if (score >= 0.50) return "#ffc107"; 
+        return "#28a745"; 
     }
 }

@@ -165,8 +165,8 @@ async function realizarPrediccion() {
     document.getElementById('mensajeRespuesta').innerHTML = `
     <b>Nivel de riesgo:</b> ${data.nivelRiesgo}<br>
     <b>Probabilidad:</b> ${data.probabilidad}<br>
-    <b>Causas:</b> ${data.factoresClave}<br>
-    <b>Recomendación:</b> ${data.recomendacion}
+    <b>Causas:</b> ${data.factoresClave || 'Perfil estable'}<br>
+    <b>Recomendación:</b> ${data.recomendacion || 'Seguimiento normal'}
     `;
 
     const resultadoDiv = document.getElementById('resultado');

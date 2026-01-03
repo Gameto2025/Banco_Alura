@@ -101,7 +101,7 @@ public class ChurnController {
     dto.put("edad", p.getEdad());
     dto.put("score", p.getScore());
     dto.put("probabilidad", String.format("%.1f%%", p.getScore() * 100));
-    dto.put("resultado", p.getResultado() == 1 ? "Churn" : "No Churn");
+    dto.put("resultado", p.getResultado() == 1 ? "Abandona" : "No abandona");
     dto.put("nivelRiesgo", nivelRiesgo(p.getScore()));
 
     dto.put("fecha", p.getFecha() != null

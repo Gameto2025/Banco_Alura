@@ -99,7 +99,7 @@ tablaCriticos.innerHTML = criticos.map(c=>`
 <td>#${c.id}</td>
 <td>${c.edad}</td>
 <td>${c.pais}</td>
-<td>${(c.score*100).toFixed(2)}%</td>
+<td>${c.score}</td>
 <td>${c.factores}</td>
 <td><span class="badge bg-warning text-dark">${c.recomendacion}</span></td>
 </tr>`).join('');
@@ -107,7 +107,7 @@ tablaCriticos.innerHTML = criticos.map(c=>`
 tablaClientesBody.innerHTML = clientes.map(c=>`
 <tr>
 <td>#${c.id}</td><td>${c.edad}</td>
-<td>${Number(c.score).toFixed(2)}%</td>
+<td>${c.score}</td>
 <td>${c.nivelRiesgo}</td><td>${c.resultado}</td><td>${c.fecha}</td>
 </tr>`).join('');
 }

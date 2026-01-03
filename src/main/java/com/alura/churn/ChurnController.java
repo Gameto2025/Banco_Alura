@@ -73,23 +73,22 @@ public class ChurnController {
 
     // ==================== CLIENTES CRÍTICOS ====================
     @GetMapping("/criticos")
-    public List<Map<String, Object>> getCriticos() {
-        return repository.findAll().stream()
-                // ALTO, MEDIO que abandonan o score >= 80%
-                .filter(p -> p.getResultado() == 1 || p.getScore() >= 0.80)
-                .sorted(Comparator.comparingDouble(Prediccion::getScore).reversed())
-                .map(p -> {
-                    Map<String, Object> dto = new HashMap<>();
-                    dto.put("id", p.getId());
-                    dto.put("edad", p.getEdad());
-                    dto.put("pais", paisTexto(p.getPais()));
-                    dto.put("score", String.format("%.1f%%", p.getScore() * 100));
-                    dto.put("factores", p.getFactores());
-                    dto.put("recomendacion", p.getRecomendacion());
-                    return dto;
-                })
-                .collect(Collectors.toList());
-    }
+public List<Map<String, Object>> getCriticos() {
+    return repository.findAll().stream()
+            .filter(p -> p.getResultado() == 1 || p.getScore() >= 0.80)
+            .sorted(Comparator.comparingDouble(Prediccion::getScore).reversed())
+            .map(p -> {
+                Map<String,Object> dto = new HashMap<>();
+                dto.put("id", p.getId());
+                dto.put("edad", p.getEdad());
+                dto.put("pais", paisTexto(p.getPais()));      // 🔥 CLAVE
+                dto.put("score", (p.getScore()*100));         // número real
+                dto.put("factores", p.getFactores());
+                dto.put("recomendacion", p.getRecomendacion());
+                return dto;
+            })
+            .collect(Collectors.toList());
+}
 
     // ==================== RESET BASE H2 ====================
     @DeleteMapping("/reset")

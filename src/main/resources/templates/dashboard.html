@@ -7,19 +7,11 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-:root{
- --alto:#dc3545; --medio:#fd7e14; --bajo:#20c997; --muybajo:#0d6efd;
-}
+:root{--alto:#dc3545;--medio:#fd7e14;--bajo:#20c997;--muybajo:#0d6efd}
 body{background:#f4f7f6}
-.badge-alto{background:var(--alto)}
-.badge-medio{background:var(--medio)}
-.badge-bajo{background:var(--bajo)}
-.badge-muy-bajo{background:var(--muybajo)}
 .chart-container{height:280px}
-canvas#graficoRiesgo{width:100%!important;height:260px!important;max-height:260px!important}
 </style>
 </head>
 
@@ -49,10 +41,8 @@ canvas#graficoRiesgo{width:100%!important;height:260px!important;max-height:260p
 <div class="col-xl-4">
 <div class="card">
 <div class="card-header fw-bold">Distribución de Riesgo</div>
-<div class="card-body">
-<div class="chart-container">
+<div class="card-body chart-container">
 <canvas id="graficoRiesgo"></canvas>
-</div>
 </div>
 </div>
 </div>
@@ -62,10 +52,7 @@ canvas#graficoRiesgo{width:100%!important;height:260px!important;max-height:260p
 <div class="card-header fw-bold text-danger">⚠ Clientes Críticos (Score ≥ 80%)</div>
 <table class="table table-striped mb-0">
 <thead class="table-dark">
-<tr>
-<th>ID</th><th>Edad</th><th>País</th><th>Score</th>
-<th>Causa</th><th>Recomendación</th><th>Acción</th>
-</tr>
+<tr><th>ID</th><th>Edad</th><th>País</th><th>Score</th><th>Causa</th><th>Recomendación</th><th>Acción</th></tr>
 </thead>
 <tbody id="tablaCriticos"></tbody>
 </table>
@@ -86,7 +73,7 @@ canvas#graficoRiesgo{width:100%!important;height:260px!important;max-height:260p
 </div>
 
 <script>
-let chart=null, clientes=[];
+let chart=null;
 
 async function cargarDatos(){
 const [s,c,a]=await Promise.all([
@@ -96,7 +83,7 @@ fetch('/api/churn/clientes')
 ]);
 const stats=await s.json();
 const criticos=await c.json();
-clientes=await a.json();
+const clientes=await a.json();
 
 totalClientes.textContent=stats.totalClientes;
 totalChurn.textContent=stats.churns;
@@ -109,11 +96,11 @@ tablaCriticos.innerHTML = criticos.map(c=>`
 <tr>
 <td>#${c.id}</td>
 <td>${c.edad}</td>
-<td>${c.paisTexto}</td>
-<td>${c.probabilidad}</td>
+<td>${c.pais}</td>
+<td>${c.score.toFixed(1)}%</td>
 <td>${c.factores}</td>
-<td><span class="badge bg-warning">${c.recomendacion}</span></td>
-<td><span class="fw-bold text-danger">CONTACTAR</span></td>
+<td><span class="badge bg-warning text-dark">${c.recomendacion}</span></td>
+<td class="fw-bold text-danger">CONTACTAR</td>
 </tr>`).join('');
 
 tablaClientesBody.innerHTML = clientes.map(c=>`
@@ -128,11 +115,9 @@ function renderGrafico(dist={}){
 if(chart) chart.destroy();
 chart=new Chart(document.getElementById('graficoRiesgo'),{
 type:'doughnut',
-data:{
-labels:['ALTO','MEDIO','BAJO','MUY BAJO'],
+data:{labels:['ALTO','MEDIO','BAJO','MUY BAJO'],
 datasets:[{data:[dist.ALTO||0,dist.MEDIO||0,dist.BAJO||0,dist['MUY BAJO']||0],
-backgroundColor:['#dc3545','#fd7e14','#20c997','#0d6efd']}]
-},
+backgroundColor:['#dc3545','#fd7e14','#20c997','#0d6efd']}]},
 options:{responsive:true,maintainAspectRatio:false,cutout:'70%'}
 });
 }

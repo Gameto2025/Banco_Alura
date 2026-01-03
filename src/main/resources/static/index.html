@@ -162,11 +162,11 @@ async function realizarPrediccion() {
 
     const data = await response.json();
 
-   document.getElementById('mensajeRespuesta').innerHTML = `
+    document.getElementById('mensajeRespuesta').innerHTML = `
     <b>Nivel de riesgo:</b> ${data.nivelRiesgo}<br>
     <b>Probabilidad:</b> ${data.probabilidad}<br>
-    <b>Causas:</b> ${data.factoresClave || 'Perfil estable'}<br>
-    <b>Recomendación:</b> ${data.recomendacion || 'Seguimiento normal'}
+    <b>Causas:</b> ${data.factoresClave}<br>
+    <b>Recomendación:</b> ${data.recomendacion}
     `;
 
     const resultadoDiv = document.getElementById('resultado');

@@ -123,10 +123,10 @@
 
     <div class="form-group">
         <label>País</label>
-        <select id="pais">
+            <select id="pais">
             <option value="0">France</option>
-            <option value="1">Germany</option>
-            <option value="2">Spain</option>
+            <option value="1">Spain</option>
+            <option value="2">Germany</option>
         </select>
     </div>
 
@@ -147,12 +147,12 @@
 <script>
 async function realizarPrediccion() {
 
-    const datos = {
-        edad: document.getElementById('edad').value,
-        productos: document.getElementById('productos').value,
-        activo: document.getElementById('activo').value,
-        pais: document.getElementById('pais').value
-    };
+   const datos = {
+    edad: parseInt(document.getElementById("edad").value),
+    productos: parseInt(document.getElementById("productos").value),
+    activo: document.getElementById("activo").value === "Si" ? 1 : 0,
+    pais: parseInt(document.getElementById("pais").value)
+};
 
     const response = await fetch('/api/churn/predict', {
         method: 'POST',
@@ -162,11 +162,11 @@ async function realizarPrediccion() {
 
     const data = await response.json();
 
-    document.getElementById('mensajeRespuesta').innerHTML = `
+    document.getElementById("mensajeRespuesta").innerHTML = `
     <b>Nivel de riesgo:</b> ${data.nivelRiesgo}<br>
     <b>Probabilidad:</b> ${data.probabilidad}<br>
-    <b>Causas:</b> ${data.factoresClave || 'Perfil estable'}<br>
-    <b>Recomendación:</b> ${data.recomendacion || 'Seguimiento normal'}
+    <b>Causas:</b> ${data.factoresClave}<br>
+    <b>Recomendación:</b> ${data.recomendacion}
     `;
 
     const resultadoDiv = document.getElementById('resultado');

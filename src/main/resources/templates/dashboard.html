@@ -113,7 +113,7 @@ tablaCriticos.innerHTML = criticos.map(c=>`
 <td>${c.probabilidad}</td>
 <td>${c.factores}</td>
 <td><span class="badge bg-warning">${c.recomendacion}</span></td>
-<td><button class="btn btn-danger btn-sm">📞</button></td>
+<td><span class="fw-bold text-danger">CONTACTAR</span></td>
 </tr>`).join('');
 
 tablaClientesBody.innerHTML = clientes.map(c=>`

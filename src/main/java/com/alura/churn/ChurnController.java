@@ -43,7 +43,8 @@ public class ChurnController {
         Map<String, Object> resp = new HashMap<>();
         resp.put("totalClientes", total);
         resp.put("churns", churns);
-        resp.put("tasaChurn", String.format("%.1f%%", total == 0 ? 0 : (churns * 100.0 / total)));
+        resp.put("tasaChurn", String.format("%.1f%%",
+                total == 0 ? 0 : (churns * 100.0 / total)));
         resp.put("scorePromedio", String.format("%.1f%%",
                 lista.stream().mapToDouble(Prediccion::getScore).average().orElse(0) * 100));
 
@@ -57,13 +58,15 @@ public class ChurnController {
         return resp;
     }
 
-    // ==================== CLIENTES ====================
+    // ==================== TODOS LOS CLIENTES ====================
     @GetMapping("/clientes")
     public List<Map<String, Object>> getClientes() {
         return repository.findAll()
                 .stream()
-                .sorted(Comparator.comparing(Prediccion::getFecha,
-                        Comparator.nullsLast(Comparator.reverseOrder())))
+                .sorted(Comparator.comparing(
+                        Prediccion::getFecha,
+                        Comparator.nullsLast(Comparator.reverseOrder())
+                ))
                 .map(this::mapearPrediccion)
                 .collect(Collectors.toList());
     }
@@ -71,13 +74,18 @@ public class ChurnController {
     // ==================== CLIENTES CRÍTICOS ====================
     @GetMapping("/criticos")
     public List<Map<String, Object>> getCriticos() {
-        return repository.findAll()
-                .stream()
-                .filter(p -> p.getScore() >= 0.80)
-                .sorted((a,b) -> Double.compare(b.getScore(), a.getScore()))
+        return repository.findAll().stream()
+                // ALTO, MEDIO que abandonan o score >= 80%
+                .filter(p -> p.getResultado() == 1 || p.getScore() >= 0.80)
+                .sorted(Comparator.comparingDouble(Prediccion::getScore).reversed())
                 .map(p -> {
-                    Map<String,Object> dto = mapearPrediccion(p);
-                    dto.put("paisTexto", mapPais(p.getPais()));
+                    Map<String, Object> dto = new HashMap<>();
+                    dto.put("id", p.getId());
+                    dto.put("edad", p.getEdad());
+                    dto.put("pais", paisTexto(p.getPais()));
+                    dto.put("score", String.format("%.1f%%", p.getScore() * 100));
+                    dto.put("factores", p.getFactores());
+                    dto.put("recomendacion", p.getRecomendacion());
                     return dto;
                 })
                 .collect(Collectors.toList());
@@ -105,7 +113,6 @@ public class ChurnController {
         dto.put("probabilidad", String.format("%.1f%%", p.getScore() * 100));
         dto.put("resultado", p.getResultado() == 1 ? "Abandona" : "No abandona");
         dto.put("nivelRiesgo", nivelRiesgo(p.getScore()));
-
         dto.put("fecha", p.getFecha() != null
                 ? p.getFecha().toString().split("T")[0]
                 : "N/A");
@@ -123,9 +130,13 @@ public class ChurnController {
         return "MUY BAJO";
     }
 
-    private String mapPais(int p) {
-        if (p == 2) return "Germany";
-        if (p == 1) return "Spain";
-        return "France";
+    private String paisTexto(Integer p) {
+        if (p == null) return "N/A";
+        switch (p) {
+            case 0: return "France";
+            case 1: return "Spain";
+            case 2: return "Germany";
+            default: return "N/A";
+        }
     }
 }

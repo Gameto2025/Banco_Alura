@@ -31,7 +31,6 @@ public class ChurnController {
 
         List<Prediccion> lista = repository.findAll();
 
-        // Conteo por nivel de riesgo (ALTO/MEDIO/BAJO/MUY BAJO)
         Map<String, Long> conteo = lista.stream()
                 .collect(Collectors.groupingBy(
                         p -> nivelRiesgo(p.getScore()),
@@ -48,7 +47,6 @@ public class ChurnController {
         resp.put("scorePromedio", String.format("%.1f%%",
                 lista.stream().mapToDouble(Prediccion::getScore).average().orElse(0) * 100));
 
-        // Distribución SIEMPRE con las 4 claves (evita gráficos en blanco)
         Map<String, Integer> dist = new HashMap<>();
         dist.put("ALTO", conteo.getOrDefault("ALTO", 0L).intValue());
         dist.put("MEDIO", conteo.getOrDefault("MEDIO", 0L).intValue());
@@ -70,14 +68,18 @@ public class ChurnController {
                 .collect(Collectors.toList());
     }
 
-    // ==================== TOP RIESGO ====================
-    @GetMapping("/top-riesgo")
-    public List<Map<String, Object>> getTopRiesgo() {
+    // ==================== CLIENTES CRÍTICOS ====================
+    @GetMapping("/criticos")
+    public List<Map<String, Object>> getCriticos() {
         return repository.findAll()
                 .stream()
-                .sorted((a, b) -> Double.compare(b.getScore(), a.getScore()))
-                .limit(10)
-                .map(this::mapearPrediccion)
+                .filter(p -> p.getScore() >= 0.80)
+                .sorted((a,b) -> Double.compare(b.getScore(), a.getScore()))
+                .map(p -> {
+                    Map<String,Object> dto = mapearPrediccion(p);
+                    dto.put("paisTexto", mapPais(p.getPais()));
+                    return dto;
+                })
                 .collect(Collectors.toList());
     }
 
@@ -95,31 +97,35 @@ public class ChurnController {
 
     // ==================== MÉTODOS AUXILIARES ====================
     private Map<String, Object> mapearPrediccion(Prediccion p) {
-    Map<String, Object> dto = new HashMap<>();
+        Map<String, Object> dto = new HashMap<>();
 
-    dto.put("id", p.getId());
-    dto.put("edad", p.getEdad());
-    dto.put("score", p.getScore());
-    dto.put("probabilidad", String.format("%.1f%%", p.getScore() * 100));
-    dto.put("resultado", p.getResultado() == 1 ? "Abandona" : "No abandona");
-    dto.put("nivelRiesgo", nivelRiesgo(p.getScore()));
+        dto.put("id", p.getId());
+        dto.put("edad", p.getEdad());
+        dto.put("score", p.getScore());
+        dto.put("probabilidad", String.format("%.1f%%", p.getScore() * 100));
+        dto.put("resultado", p.getResultado() == 1 ? "Abandona" : "No abandona");
+        dto.put("nivelRiesgo", nivelRiesgo(p.getScore()));
 
-    dto.put("fecha", p.getFecha() != null
-            ? p.getFecha().toString().split("T")[0]
-            : "N/A");
+        dto.put("fecha", p.getFecha() != null
+                ? p.getFecha().toString().split("T")[0]
+                : "N/A");
 
-    // 🔥 EXPLICABILIDAD
-    dto.put("factores", p.getFactores());
-    dto.put("recomendacion", p.getRecomendacion());
+        dto.put("factores", p.getFactores());
+        dto.put("recomendacion", p.getRecomendacion());
 
-    return dto;
-}
+        return dto;
+    }
 
-    // Niveles CONSISTENTES con el servicio y el dashboard
     private String nivelRiesgo(double score) {
         if (score >= 0.75) return "ALTO";
         if (score >= 0.58) return "MEDIO";
         if (score >= 0.30) return "BAJO";
         return "MUY BAJO";
+    }
+
+    private String mapPais(int p) {
+        if (p == 2) return "Germany";
+        if (p == 1) return "Spain";
+        return "France";
     }
 }

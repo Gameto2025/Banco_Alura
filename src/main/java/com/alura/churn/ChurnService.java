@@ -53,9 +53,12 @@ public class ChurnService {
             if (productos == 1) factoresClave.add("Baja vinculación");
             if (factoresClave.isEmpty()) factoresClave.add("Perfil estable");
 
+            double ageRisk = (edad >= 40 && edad <= 70) ? 1.0 : 0.0;
+
             Map<String, Object> inputs = new HashMap<>();
-            inputs.put("Inactivo_40_70", inactivo4070);
+            inputs.put("Age_Risk", ageRisk);
             inputs.put("NumOfProducts", (double) productos);
+            inputs.put("Inactivo_40_70", inactivo4070);
             inputs.put("Products_Risk_Flag", productsRiskFlag);
             inputs.put("Country_Risk_Flag", countryRiskFlag);
 

@@ -162,11 +162,12 @@ async function realizarPrediccion() {
 
     const data = await response.json();
 
-   document.getElementById('mensajeRespuesta').innerText =
-    "Nivel de riesgo de churn: " + data.nivelRiesgo;
-
-    document.getElementById('probabilidad').innerText =
-    "Probabilidad: " + data.probabilidad;
+   document.getElementById('mensajeRespuesta').innerHTML = `
+    <b>Nivel de riesgo:</b> ${data.nivelRiesgo}<br>
+    <b>Probabilidad:</b> ${data.probabilidad}<br>
+    <b>Causas:</b> ${data.factoresClave || 'Perfil estable'}<br>
+    <b>Recomendación:</b> ${data.recomendacion || 'Seguimiento normal'}
+    `;
 
     const resultadoDiv = document.getElementById('resultado');
 

@@ -2,12 +2,9 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard Churn – Banco Alura</title>
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <style>
 :root{--alto:#dc3545;--medio:#fd7e14;--bajo:#20c997;--muybajo:#0d6efd}
 body{background:#f4f7f6}
@@ -20,62 +17,46 @@ body{background:#f4f7f6}
 <nav class="navbar navbar-dark bg-dark">
 <div class="container-fluid">
 <span class="navbar-brand">Dashboard Churn Banco Alura</span>
-<div>
-<button class="btn btn-light btn-sm me-2" onclick="location.href='/'">Nueva Predicción</button>
 <button class="btn btn-info btn-sm" onclick="cargarDatos()">Refrescar</button>
-</div>
 </div>
 </nav>
 
 <div class="container-fluid mt-4">
 
-<div class="row g-3 mb-4">
-<div class="col"><div class="card p-3 text-center"><div id="totalClientes" class="fs-3 fw-bold">0</div>Evaluados</div></div>
-<div class="col"><div class="card p-3 text-center"><div id="totalChurn" class="fs-3 fw-bold text-danger">0</div>Probable Churn</div></div>
-<div class="col"><div class="card p-3 text-center"><div id="tasaChurn" class="fs-3 fw-bold">0%</div>Tasa</div></div>
-<div class="col"><div class="card p-3 text-center"><div id="scorePromedio" class="fs-3 fw-bold text-success">0%</div>Confianza AI</div></div>
+<div class="row mb-4 text-center">
+<div class="col card p-3"><div id="totalClientes" class="fs-3 fw-bold">0</div>Evaluados</div>
+<div class="col card p-3"><div id="totalChurn" class="fs-3 fw-bold text-danger">0</div>Probable Churn</div>
+<div class="col card p-3"><div id="tasaChurn" class="fs-3 fw-bold">0%</div>Tasa</div>
+<div class="col card p-3"><div id="scorePromedio" class="fs-3 fw-bold text-success">0%</div>Confianza AI</div>
 </div>
 
-<div class="row g-4">
-
-<div class="col-xl-4">
-<div class="card">
-<div class="card-header fw-bold">Distribución de Riesgo</div>
-<div class="card-body chart-container">
+<div class="row">
+<div class="col-md-4 card p-3">
 <canvas id="graficoRiesgo"></canvas>
 </div>
-</div>
-</div>
 
-<div class="col-xl-8">
-<div class="card">
-<div class="card-header fw-bold text-danger">⚠ Clientes Críticos (Score ≥ 80%)</div>
-<table class="table table-striped mb-0">
+<div class="col-md-8 card p-3">
+<h5 class="text-danger">⚠ Clientes Críticos</h5>
+<table class="table">
 <thead class="table-dark">
-<tr>
-<th>ID</th><th>Edad</th><th>País</th><th>Score</th><th>Riesgo</th><th>Causa</th><th>Recomendación</th>
-</tr>
+<tr><th>ID</th><th>Edad</th><th>País</th><th>Score</th><th>Riesgo</th><th>Causa</th><th>Recomendación</th></tr>
 </thead>
 <tbody id="tablaCriticos"></tbody>
 </table>
 </div>
 </div>
 
-<div class="col-12">
-<div class="card">
-<div class="card-header fw-bold">Todos los clientes</div>
-<table class="table table-sm mb-0">
+<div class="card mt-4 p-3">
+<h5>Todos los clientes</h5>
+<table class="table table-sm">
 <thead><tr><th>ID</th><th>Edad</th><th>Score</th><th>Riesgo</th><th>Resultado</th><th>Fecha</th></tr></thead>
 <tbody id="tablaClientesBody"></tbody>
 </table>
 </div>
 </div>
 
-</div>
-</div>
-
 <script>
-let chart=null;
+let chart;
 
 async function cargarDatos(){
 const [s,c,a]=await Promise.all([
@@ -92,45 +73,17 @@ totalChurn.textContent=stats.churns;
 tasaChurn.textContent=stats.tasaChurn;
 scorePromedio.textContent=stats.scorePromedio;
 
-renderGrafico(stats.distribucionRiesgo||{});
-
 tablaCriticos.innerHTML = criticos.map(c=>{
-const score = Number(c.score).toFixed(2);
-const riesgo = score >= 90 ? 'ALTO' : 'MEDIO';
-const color = score >= 90 ? 'bg-danger' : 'bg-warning';
-return `
-<tr>
-<td>#${c.id}</td>
-<td>${c.edad}</td>
-<td>${c.pais}</td>
-<td>${(c.score * 100).toFixed(2)}%</td>
-<td><span class="badge ${color}">${riesgo}</span></td>
-<td>${c.factores}</td>
-<td><span class="badge bg-warning text-dark">${c.recomendacion}</span></td>
-</tr>`}).join('');
+const color = c.riesgo === 'ALTO' ? 'bg-danger' : c.riesgo === 'MEDIO' ? 'bg-warning' : c.riesgo === 'BAJO' ? 'bg-success' : 'bg-primary';
+return `<tr>
+<td>#${c.id}</td><td>${c.edad}</td><td>${c.pais}</td><td>${c.score.toFixed(2)}%</td>
+<td><span class="badge ${color}">${c.riesgo}</span></td>
+<td>${c.factores}</td><td><span class="badge bg-warning">${c.recomendacion}</span></td></tr>`;
+}).join('');
 
 tablaClientesBody.innerHTML = clientes.map(c=>`
-<tr>
-<td>#${c.id}</td>
-<td>${c.edad}</td>
-<td>${c.score}</td> 
-<td>${c.nivelRiesgo}</td>
-<td>${c.resultado}</td>
-<td>${c.fecha}</td>
-</tr>`).join('');
+<tr><td>#${c.id}</td><td>${c.edad}</td><td>${c.score}</td><td>${c.nivelRiesgo}</td><td>${c.resultado}</td><td>${c.fecha}</td></tr>`).join('');
 }
-
-function renderGrafico(dist={}){
-if(chart) chart.destroy();
-chart=new Chart(document.getElementById('graficoRiesgo'),{
-type:'doughnut',
-data:{labels:['ALTO','MEDIO','BAJO','MUY BAJO'],
-datasets:[{data:[dist.ALTO||0,dist.MEDIO||0,dist.BAJO||0,dist['MUY BAJO']||0],
-backgroundColor:['#dc3545','#fd7e14','#20c997','#0d6efd']}]},
-options:{responsive:true,maintainAspectRatio:false,cutout:'70%'}
-});
-}
-
 document.addEventListener('DOMContentLoaded', cargarDatos);
 </script>
 </body>

@@ -52,7 +52,9 @@ body{background:#f4f7f6}
 <div class="card-header fw-bold text-danger">⚠ Clientes Críticos (Score ≥ 80%)</div>
 <table class="table table-striped mb-0">
 <thead class="table-dark">
-<tr><th>ID</th><th>Edad</th><th>País</th><th>Score</th><th>Causa</th><th>Recomendación</th><th>Acción</th></tr>
+<tr>
+<th>ID</th><th>Edad</th><th>País</th><th>Score</th><th>Causa</th><th>Recomendación</th>
+</tr>
 </thead>
 <tbody id="tablaCriticos"></tbody>
 </table>
@@ -97,10 +99,9 @@ tablaCriticos.innerHTML = criticos.map(c=>`
 <td>#${c.id}</td>
 <td>${c.edad}</td>
 <td>${c.pais}</td>
-<td>${c.score.toFixed(1)}%</td>
+<td>${c.score}</td>
 <td>${c.factores}</td>
 <td><span class="badge bg-warning text-dark">${c.recomendacion}</span></td>
-<td class="fw-bold text-danger">CONTACTAR</td>
 </tr>`).join('');
 
 tablaClientesBody.innerHTML = clientes.map(c=>`

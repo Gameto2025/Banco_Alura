@@ -83,7 +83,7 @@ public class ChurnService {
             Prediccion p = new Prediccion();
             p.setEdad(edad);
             p.setScore(probabilidad);
-            p.setResultado(probabilidad >= 0.58 ? 1 : 0);
+            p.setResultado(probabilidad >= 0.60 ? 1 : 0);
             p.setPais(pais);
             p.setProductos(productos);
             p.setFactores(factoresTxt);
@@ -93,7 +93,7 @@ public class ChurnService {
             Map<String, Object> resp = new HashMap<>();
             resp.put("score", probabilidad);
             resp.put("nivelRiesgo", nivelRiesgo);
-            resp.put("resultado", probabilidad >= 0.58 ? "Churn" : "No Churn");
+            resp.put("resultado", probabilidad >= 0.60 ? "Churn" : "No Churn");
             resp.put("factoresClave", factoresTxt);
             resp.put("recomendacion", recomendacion);
             resp.put("colorRiesgo", getColorPorRiesgo(nivelRiesgo));
@@ -117,8 +117,8 @@ public class ChurnService {
     }
 
     private String determinarNivelRiesgo(double p) {
-        if (p >= 0.75) return "ALTO";
-        if (p >= 0.58) return "MEDIO";
+        if (p >= 0.70) return "ALTO";
+        if (p >= 0.50) return "MEDIO";
         if (p >= 0.30) return "BAJO";
         return "MUY BAJO";
     }

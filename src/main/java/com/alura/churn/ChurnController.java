@@ -10,16 +10,19 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/churn")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins="*")
 public class ChurnController {
 
     @Autowired
     private PrediccionRepository repository;
 
-    @PostMapping("/predict")
+    @Autowired
+    private ChurnService churnService; 
+
+   @PostMapping("/predict")
     public Map<String, Object> predict(@RequestBody Map<String, Object> datos) {
-        return Map.of("ok", true);
-    }
+        return churnService.predecir(datos);
+        }
 
     @GetMapping("/estadisticas")
     public Map<String, Object> estadisticas() {

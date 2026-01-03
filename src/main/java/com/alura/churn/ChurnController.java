@@ -81,7 +81,7 @@ public class ChurnController {
                     dto.put("id", p.getId());
                     dto.put("edad", p.getEdad());
                     dto.put("pais", paisTexto(p.getPais()));
-                    dto.put("score", String.format("%.2f%%", p.getScore() * 100));
+                    dto.put("score", p.getScore()); 
                     dto.put("factores", p.getFactores());
                     dto.put("recomendacion", p.getRecomendacion());
                     return dto;

@@ -103,7 +103,7 @@ return `
 <td>#${c.id}</td>
 <td>${c.edad}</td>
 <td>${c.pais}</td>
-<td>${score}%</td>
+<td>${(c.score * 100).toFixed(2)}%</td>
 <td><span class="badge ${color}">${riesgo}</span></td>
 <td>${c.factores}</td>
 <td><span class="badge bg-warning text-dark">${c.recomendacion}</span></td>

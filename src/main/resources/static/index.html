@@ -1,186 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Churn – Banco Alura</title>
+<meta charset="UTF-8">
+<title>Churn – Banco Alura</title>
 
-    <style>
-        body {
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            background: #f4f7f6;
-        }
+<style>
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: #f4f7f6;
+}
 
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        h2 { text-align: center; color: #2c3e50; }
-
-        .form-group { margin-bottom: 15px; }
-
-        label { display: block; margin-bottom: 5px; color: #666; }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        button:hover { background: #2980b9; }
-
-        .btn-dashboard {
-        width: 100%;
-        padding: 12px;
-        margin-top: 12px;
-        background: linear-gradient(135deg,#1abc9c,#16a085);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 15px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.25s;
-    }
-
-        .btn-dashboard:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(0,0,0,.15);
-        }
-
-        #resultado {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 5px;
-            display: none;
-            text-align: center;
-        }
-
-        /* BOTÓN PRINCIPAL – CONSULTAR CHURN */
-.btn-consultar {
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     width: 100%;
-    padding: 14px;
-    margin-top: 15px;
-    background: linear-gradient(135deg,#d97706,#b45309);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.25s;
+    max-width: 420px;
 }
 
-.btn-consultar:hover {
-    background: linear-gradient(135deg,#b45309,#92400e);
-    transform: translateY(-1px);
+h2 { text-align: center; color: #2c3e50; }
+
+.form-group { margin-bottom: 15px; }
+label { display:block;margin-bottom:5px;color:#666; }
+
+input,select {
+    width:100%; padding:10px;border:1px solid #ddd;border-radius:5px;
 }
-    </style>
+
+.btn-consultar {
+    width:100%;padding:14px;margin-top:15px;
+    background:linear-gradient(135deg,#d97706,#b45309);
+    color:white;border:none;border-radius:8px;
+    font-size:16px;font-weight:700;cursor:pointer;transition:.25s;
+}
+.btn-consultar:hover{background:linear-gradient(135deg,#b45309,#92400e);}
+
+.btn-dashboard{
+    width:100%;padding:12px;margin-top:12px;
+    background:linear-gradient(135deg,#1abc9c,#16a085);
+    color:white;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;
+}
+
+#resultado{
+    margin-top:20px;padding:15px;border-radius:8px;
+    display:none;text-align:center;font-weight:600;
+}
+</style>
 </head>
 
 <body>
-
 <div class="card">
-    <h2>Analizador de Clientes Banco Alura</h2>
+<h2>Analizador de Clientes Banco Alura</h2>
 
-    <div class="form-group">
-        <label>Edad</label>
-        <input type="number" id="edad">
-    </div>
+<div class="form-group">
+<label>Edad</label>
+<input type="number" id="edad">
+</div>
 
-    <div class="form-group">
-        <label>Número de productos</label>
-        <input type="number" id="productos">
-    </div>
+<div class="form-group">
+<label>Número de productos</label>
+<input type="number" id="productos">
+</div>
 
-    <div class="form-group">
-        <label>Cuenta activa</label>
-        <select id="activo">
-            <option value="1">Sí</option>
-            <option value="0">No</option>
-        </select>
-    </div>
+<div class="form-group">
+<label>Cuenta activa</label>
+<select id="activo">
+<option value="1">Sí</option>
+<option value="0">No</option>
+</select>
+</div>
 
-    <div class="form-group">
-        <label>País</label>
-            <select id="pais">
-            <option value="0">France</option>
-            <option value="1">Spain</option>
-            <option value="2">Germany</option>
-        </select>
-    </div>
+<div class="form-group">
+<label>País</label>
+<select id="pais">
+<option value="0">France</option>
+<option value="1">Spain</option>
+<option value="2">Germany</option>
+</select>
+</div>
 
-   <button class="btn-consultar" onclick="realizarPrediccion()">
-    🧠 Consultar Churn
-</button>
+<button class="btn-consultar" onclick="realizarPrediccion()">🧠 Consultar Churn</button>
+<button class="btn-dashboard" onclick="window.location.href='/dashboard'">📊 Ver Dashboard de Riesgos</button>
 
-    <button class="btn-dashboard" onclick="window.location.href='/dashboard'">
-    📊 Ver Dashboard de Riesgos
-    </button>
-
-    <div id="resultado">
-        <p id="mensajeRespuesta"></p>
-        <p id="probabilidad"></p>
-    </div>
+<div id="resultado">
+    <div id="mensajeRespuesta"></div>
+</div>
 </div>
 
 <script>
 async function realizarPrediccion() {
 
-   const datos = {
+const datos = {
     edad: parseInt(document.getElementById("edad").value),
     productos: parseInt(document.getElementById("productos").value),
-    activo: document.getElementById("activo").value === "Si" ? 1 : 0,
+    activo: parseInt(document.getElementById("activo").value),
     pais: parseInt(document.getElementById("pais").value)
 };
 
-    const response = await fetch('/api/churn/predict', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(datos)
-    });
+const response = await fetch('/api/churn/predict', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(datos)
+});
 
-    const porcentaje = (data.score * 100).toFixed(1) + "%";
+const data = await response.json();
 
-        document.getElementById("mensajeRespuesta").innerHTML = `
-        <b>Nivel de riesgo:</b> ${data.nivelRiesgo}<br>
-        <b>Probabilidad:</b> ${porcentaje}<br>
-        <b>Causas:</b> ${data.factoresClave}<br>
-        <b>Recomendación:</b> ${data.recomendacion}
-        `;
+const porcentaje = (data.score * 100).toFixed(1) + "%";
 
-    const resultadoDiv = document.getElementById('resultado');
+document.getElementById("mensajeRespuesta").innerHTML = `
+<b>Nivel de riesgo:</b> ${data.nivelRiesgo}<br>
+<b>Probabilidad:</b> ${porcentaje}<br>
+<b>Causas:</b> ${data.factoresClave}<br>
+<b>Recomendación:</b> ${data.recomendacion}
+`;
 
-if (data.colorRiesgo) {
-    resultadoDiv.style.border = "2px solid " + data.colorRiesgo;
-    resultadoDiv.style.color = data.colorRiesgo;
-}
-
-// Mostrar el resultado
-    resultadoDiv.style.display = 'block';
-
+const r = document.getElementById("resultado");
+r.style.border = "2px solid " + data.colorRiesgo;
+r.style.color  = data.colorRiesgo;
+r.style.display = "block";
 }
 </script>
-
 </body>
 </html>

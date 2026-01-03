@@ -160,14 +160,14 @@ async function realizarPrediccion() {
         body: JSON.stringify(datos)
     });
 
-    const data = await response.json();
+    const porcentaje = (data.score * 100).toFixed(1) + "%";
 
-    document.getElementById("mensajeRespuesta").innerHTML = `
-    <b>Nivel de riesgo:</b> ${data.nivelRiesgo}<br>
-    <b>Probabilidad:</b> ${data.probabilidad}<br>
-    <b>Causas:</b> ${data.factoresClave}<br>
-    <b>Recomendación:</b> ${data.recomendacion}
-    `;
+        document.getElementById("mensajeRespuesta").innerHTML = `
+        <b>Nivel de riesgo:</b> ${data.nivelRiesgo}<br>
+        <b>Probabilidad:</b> ${porcentaje}<br>
+        <b>Causas:</b> ${data.factoresClave}<br>
+        <b>Recomendación:</b> ${data.recomendacion}
+        `;
 
     const resultadoDiv = document.getElementById('resultado');
 

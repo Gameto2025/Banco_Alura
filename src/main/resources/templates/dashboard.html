@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Dashboard Churn – Banco Alura</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-:root{--alto:#dc3545;--medio:#fd7e14;--bajo:#20c997;--muybajo:#0d6efd}
-body{background:#f4f7f6}
-.chart-container{height:280px}
-</style>
+    <meta charset="UTF-8">
+    <title>Dashboard Churn – Banco Alura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root { --alto: #dc3545; --medio: #fd7e14; --bajo: #20c997; --muybajo: #0d6efd; }
+        body { background: #f4f7f6; }
+        /* Asegura que el contenedor del gráfico tenga una altura visible */
+        .chart-container { position: relative; height: 300px; width: 100%; }
+    </style>
 </head>
 
 <body>
@@ -28,67 +29,110 @@ body{background:#f4f7f6}
 
 <div class="container-fluid mt-4">
 
-<div class="row mb-4 text-center">
-<div class="col card p-3"><div id="totalClientes" class="fs-3 fw-bold">0</div>Evaluados</div>
-<div class="col card p-3"><div id="totalChurn" class="fs-3 fw-bold text-danger">0</div>Probable Churn</div>
-<div class="col card p-3"><div id="tasaChurn" class="fs-3 fw-bold">0%</div>Tasa</div>
-<div class="col card p-3"><div id="scorePromedio" class="fs-3 fw-bold text-success">0%</div>Confianza AI</div>
-</div>
+    <div class="row mb-4 text-center">
+        <div class="col card p-3"><div id="totalClientes" class="fs-3 fw-bold">0</div>Evaluados</div>
+        <div class="col card p-3"><div id="totalChurn" class="fs-3 fw-bold text-danger">0</div>Probable Churn</div>
+        <div class="col card p-3"><div id="tasaChurn" class="fs-3 fw-bold">0%</div>Tasa</div>
+        <div class="col card p-3"><div id="scorePromedio" class="fs-3 fw-bold text-success">0%</div>Confianza AI</div>
+    </div>
 
-<div class="row">
-<div class="col-md-4 card p-3">
-<canvas id="graficoRiesgo"></canvas>
-</div>
+    <div class="row">
+        <div class="col-md-4 card p-3">
+            <h5 class="text-center">Distribución de Riesgo</h5>
+            <div class="chart-container">
+                <canvas id="graficoRiesgo"></canvas>
+            </div>
+        </div>
 
-<div class="col-md-8 card p-3">
-<h5 class="text-danger">⚠ Clientes Críticos</h5>
-<table class="table">
-<thead class="table-dark">
-<tr><th>ID</th><th>Edad</th><th>País</th><th>Score</th><th>Riesgo</th><th>Causa</th><th>Recomendación</th></tr>
-</thead>
-<tbody id="tablaCriticos"></tbody>
-</table>
-</div>
-</div>
+        <div class="col-md-8 card p-3">
+            <h5 class="text-danger">⚠ Clientes Críticos</h5>
+            <table class="table">
+                <thead class="table-dark">
+                    <tr><th>ID</th><th>Edad</th><th>País</th><th>Score</th><th>Riesgo</th><th>Causa</th><th>Recomendación</th></tr>
+                </thead>
+                <tbody id="tablaCriticos"></tbody>
+            </table>
+        </div>
+    </div>
 
-<div class="card mt-4 p-3">
-<h5>Todos los clientes</h5>
-<table class="table table-sm">
-<thead><tr><th>ID</th><th>Edad</th><th>Score</th><th>Riesgo</th><th>Resultado</th><th>Fecha</th></tr></thead>
-<tbody id="tablaClientesBody"></tbody>
-</table>
-</div>
+    <div class="card mt-4 p-3">
+        <h5>Todos los clientes</h5>
+        <table class="table table-sm">
+            <thead><tr><th>ID</th><th>Edad</th><th>Score</th><th>Riesgo</th><th>Resultado</th><th>Fecha</th></tr></thead>
+            <tbody id="tablaClientesBody"></tbody>
+        </table>
+    </div>
 </div>
 
 <script>
-let chart;
+let chart; // Variable global para controlar la instancia del gráfico
 
-async function cargarDatos(){
-const [s,c,a]=await Promise.all([
-fetch('/api/churn/estadisticas'),
-fetch('/api/churn/criticos'),
-fetch('/api/churn/clientes')
-]);
-const stats=await s.json();
-const criticos=await c.json();
-const clientes=await a.json();
+async function cargarDatos() {
+    try {
+        const [s, c, a] = await Promise.all([
+            fetch('/api/churn/estadisticas'),
+            fetch('/api/churn/criticos'),
+            fetch('/api/churn/clientes')
+        ]);
+        
+        const stats = await s.json();
+        const criticos = await c.json();
+        const clientes = await a.json();
 
-totalClientes.textContent=stats.totalClientes;
-totalChurn.textContent=stats.churns;
-tasaChurn.textContent=stats.tasaChurn;
-scorePromedio.textContent=stats.scorePromedio;
+        // Actualizar contadores superiores
+        document.getElementById('totalClientes').textContent = stats.totalClientes;
+        document.getElementById('totalChurn').textContent = stats.churns;
+        document.getElementById('tasaChurn').textContent = stats.tasaChurn;
+        document.getElementById('scorePromedio').textContent = stats.scorePromedio;
 
-tablaCriticos.innerHTML = criticos.map(c=>{
-const color = c.riesgo === 'ALTO' ? 'bg-danger' : c.riesgo === 'MEDIO' ? 'bg-warning' : c.riesgo === 'BAJO' ? 'bg-success' : 'bg-primary';
-return `<tr>
-<td>#${c.id}</td><td>${c.edad}</td><td>${c.pais}</td><td>${c.score.toFixed(2)}%</td>
-<td><span class="badge ${color}">${c.riesgo}</span></td>
-<td>${c.factores}</td><td><span class="badge bg-warning">${c.recomendacion}</span></td></tr>`;
-}).join('');
+        // --- LÓGICA DEL GRÁFICO DE DONA ---
+        const ctx = document.getElementById('graficoRiesgo').getContext('2d');
+        
+        // Si el gráfico ya existe, se destruye para poder crear uno nuevo con datos actualizados
+        if (chart) {
+            chart.destroy();
+        }
 
-tablaClientesBody.innerHTML = clientes.map(c=>`
-<tr><td>#${c.id}</td><td>${c.edad}</td><td>${c.score}</td><td>${c.nivelRiesgo}</td><td>${c.resultado}</td><td>${c.fecha}</td></tr>`).join('');
+        chart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Probable Churn', 'Clientes Seguros'],
+                datasets: [{
+                    data: [stats.churns, stats.totalClientes - stats.churns],
+                    backgroundColor: ['#dc3545', '#0d6efd'], // Rojo para Churn, Azul para Seguros
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Actualizar Tabla de Críticos
+        document.getElementById('tablaCriticos').innerHTML = criticos.map(c => {
+            const color = c.riesgo === 'ALTO' ? 'bg-danger' : c.riesgo === 'MEDIO' ? 'bg-warning' : c.riesgo === 'BAJO' ? 'bg-success' : 'bg-primary';
+            return `<tr>
+                <td>#${c.id}</td><td>${c.edad}</td><td>${c.pais}</td><td>${c.score.toFixed(2)}%</td>
+                <td><span class="badge ${color}">${c.riesgo}</span></td>
+                <td>${c.factores}</td><td><span class="badge bg-warning">${c.recomendacion}</span></td></tr>`;
+        }).join('');
+
+        // Actualizar Tabla General
+        document.getElementById('tablaClientesBody').innerHTML = clientes.map(c => `
+            <tr><td>#${c.id}</td><td>${c.edad}</td><td>${c.score}</td><td>${c.nivelRiesgo}</td><td>${c.resultado}</td><td>${c.fecha}</td></tr>`).join('');
+            
+    } catch (error) {
+        console.error("Error cargando los datos de la API:", error);
+    }
 }
+
+// Cargar datos al iniciar la página
 document.addEventListener('DOMContentLoaded', cargarDatos);
 </script>
 </body>

@@ -15,10 +15,15 @@ body{background:#f4f7f6}
 <body>
 
 <nav class="navbar navbar-dark bg-dark">
-<div class="container-fluid">
-<span class="navbar-brand">Dashboard Churn Banco Alura</span>
-<button class="btn btn-info btn-sm" onclick="cargarDatos()">Refrescar</button>
-</div>
+    <div class="container-fluid">
+        <span class="navbar-brand">Dashboard Churn Banco Alura</span>
+        <div class="d-flex gap-2">
+            <a href="/" class="btn btn-warning btn-sm fw-bold" style="background-color: #e67e22; border: none; color: white;">
+                🧠 Predecir Churn
+            </a>
+            <button class="btn btn-info btn-sm" onclick="cargarDatos()">Refrescar</button>
+        </div>
+    </div>
 </nav>
 
 <div class="container-fluid mt-4">
